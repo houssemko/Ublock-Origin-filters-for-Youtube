@@ -1,5 +1,10 @@
-! Title: Youtube-management
-! Description: My custom YouTube cleanup filters
+[uBlock Origin]
+! Title: YouTube Management
+! Last modified: 2025/03/20
+! Expires: 1 day
+! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
+! Licence: MIT licence
+!
 
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
