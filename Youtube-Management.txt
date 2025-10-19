@@ -1,4 +1,5 @@
-!! Youtube Management
+! Title: Youtube-management
+! Description: My custom YouTube cleanup filters
 
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
