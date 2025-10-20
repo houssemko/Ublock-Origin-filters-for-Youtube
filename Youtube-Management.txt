@@ -10,7 +10,6 @@ youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5
 youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
 ! Fix random / inconsistent gaps on youtube home + Hide none video shelves
-youtube.com###contents.ytd-rich-grid-renderer > :not(ytd-rich-item-renderer, ytd-continuation-item-renderer)
 youtube.com##ytd-rich-item-renderer[is-in-first-column]:style(margin-left: calc(var(--ytd-rich-grid-item-margin)/2) !important)
 youtube.com##ytd-ghost-grid-renderer
 
