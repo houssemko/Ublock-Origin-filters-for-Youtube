@@ -27,6 +27,9 @@ youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
 ! Hide search suggestions drop downs
 ||suggestqueries-clients*.youtube.com/complete/search^
 
+! Hide Autoplay Indicator in the Video player controls
+www.youtube.com##.ytp-autonav-toggle.ytp-button
+
 ! Hide the miniplayer pop up
 www.youtube.com##ytd-miniplayer
 
