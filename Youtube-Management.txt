@@ -122,6 +122,8 @@ youtube.com##.html5-video-player.ytp-fullscreen.ended-mode.ytp-autonav-endscreen
 www.youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important;)
 www.youtube.com##ytd-feed-filter-chip-bar-renderer:has(yt-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
 m.youtube.com##ytm-feed-filter-chip-bar-renderer:has(ytm-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
+www.youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+
 
 !! Non-Youtube stuff
 
