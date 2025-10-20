@@ -132,10 +132,5 @@ m.youtube.com##ytm-feed-filter-chip-bar-renderer:has(ytm-chip-cloud-chip-rendere
 ! Watched
 youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.3;)
 
-! 2 oct. 2025 https://www.youtube.com
-www.youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
-www.youtube.com##.ytp-autonav-toggle-button-container
-www.youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope
 
 
