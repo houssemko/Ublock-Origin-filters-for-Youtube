@@ -17,6 +17,12 @@ youtube.com##ytd-ghost-grid-renderer
 youtube.com###teaser-carousel
 youtube.com###video-preview-container
 
+! Remove Voice Search button
+www.youtube.com###voice-search-button
+
+! Remove Create button
+www.youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
+
 ! Block Playables on the homepage
 youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
 
