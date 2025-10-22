@@ -30,9 +30,6 @@ youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
 youtube.com###hover-overlays
 youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
 
-! Hide search suggestions drop downs
-||suggestqueries-clients*.youtube.com/complete/search^
-
 ! Hide Autoplay Indicator in the Video player controls
 www.youtube.com##.ytp-autonav-toggle.ytp-button
 
@@ -76,7 +73,6 @@ youtube.com##ytd-message-renderer.ytd-live-chat-frame.style-scope:has-text("Chat
 ! Suppress under-video information boxes
 youtube.com##ytd-shelf-renderer:has-text('From health sources')
 youtube.com###clarify-box
-
 
 ! Hide all videos containing the phrase "#shorts"
 youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
@@ -129,7 +125,6 @@ www.youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important
 www.youtube.com##ytd-feed-filter-chip-bar-renderer:has(yt-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
 m.youtube.com##ytm-feed-filter-chip-bar-renderer:has(ytm-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
 www.youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-
 
 !! Non-Youtube stuff
 
