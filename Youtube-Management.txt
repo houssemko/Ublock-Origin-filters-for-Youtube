@@ -156,9 +156,6 @@ youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[pag
 
 ! YT - Remove more unwanted elements
 youtube.com###clarify-box, ytd-watch-flexy #clarify-box
-youtube.com##ytd-download-button-renderer
-
-! Remove Country Code and Voice Search
 www.youtube.com###country-code
 www.youtube.com###voice-search-button
 
