@@ -80,13 +80,6 @@ youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|
 youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
 youtube.com###cinematics.ytd-watch-flexy:remove()
  
-! YT - Remove Shorts on all pages + irrelevant search results
-www.youtube.com###guide [title="Shorts"], .ytd-mini-guide-entry-renderer[title="Shorts"], .ytGridShelfViewModelHost, .ytd-search ytd-shelf-renderer, ytd-reel-shelf-renderer, ytd-rich-section-renderer, ytm-rich-shelf-renderer, ytm-search ytm-shelf-renderer, ytm-reel-shelf-renderer, ytm-rich-section-renderer, ytm-pivot-bar-item-renderer:has(> .pivot-shorts):style(display: none !important)
-www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-grid-video-renderer [overlay-style="SHORTS"]:upward(ytd-grid-video-renderer)
-www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer [overlay-style="SHORTS"]:upward(ytd-item-section-renderer)
-www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-rich-item-renderer [overlay-style="SHORTS"]:upward(ytd-rich-item-renderer)
-www.youtube.com##[is-search] ytd-shelf-renderer.ytd-item-section-renderer:not(ytd-channel-renderer + ytd-shelf-renderer), ytd-horizontal-card-list-renderer.ytd-item-section-renderer:not(:first-child), ytd-exploratory-results-renderer.ytd-item-section-renderer
-
 ! Hide all videos containing the phrase "#shorts"
 youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
 youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Shorts))
