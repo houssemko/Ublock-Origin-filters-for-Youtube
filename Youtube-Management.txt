@@ -82,7 +82,6 @@ youtube.com###cinematics.ytd-watch-flexy:remove()
  
 ! YT - Remove Shorts on all pages + irrelevant search results
 www.youtube.com###guide [title="Shorts"], .ytd-mini-guide-entry-renderer[title="Shorts"], .ytGridShelfViewModelHost, .ytd-search ytd-shelf-renderer, ytd-reel-shelf-renderer, ytd-rich-section-renderer, ytm-rich-shelf-renderer, ytm-search ytm-shelf-renderer, ytm-reel-shelf-renderer, ytm-rich-section-renderer, ytm-pivot-bar-item-renderer:has(> .pivot-shorts):style(display: none !important)
-www.youtube.com##.style-scope[page-subtype='channels'] ytd-shelf-renderer, .style-scope[page-subtype='channels'] ytm-shelf-renderer:style(display: block !important)
 www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-grid-video-renderer [overlay-style="SHORTS"]:upward(ytd-grid-video-renderer)
 www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer [overlay-style="SHORTS"]:upward(ytd-item-section-renderer)
 www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-rich-item-renderer [overlay-style="SHORTS"]:upward(ytd-rich-item-renderer)
