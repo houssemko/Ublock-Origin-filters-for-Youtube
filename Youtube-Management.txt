@@ -14,6 +14,9 @@ youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m:style
 youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-trailing .yt-spec-button-shape-next__icon:style(margin-left: -6px !important; margin-right: 6px !important)
 youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
 
+! Hide search suggestions drop downs
+||suggestqueries-clients*.youtube.com/complete/search^
+
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
 youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
