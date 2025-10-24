@@ -141,7 +141,6 @@ youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt
 youtube.com###cinematics.ytd-watch-flexy:remove()
 youtube.com###clarify-box, ytd-watch-flexy #clarify-box
 www.youtube.com###country-code
-www.youtube.com###voice-search-button
 
 ! Remove thanks button
 www.youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
