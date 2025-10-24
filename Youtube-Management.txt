@@ -139,15 +139,6 @@ youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you intere
 youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
 youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
 youtube.com###cinematics.ytd-watch-flexy:remove()
-
-! YT - Remove filter categories on home, search and playlist pages
-youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
-youtube.com###chip-bar.style-scope.ytd-search-header-renderer
-youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m:style(flex-direction: row-reverse !important)
-youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-trailing .yt-spec-button-shape-next__icon:style(margin-left: -6px !important; margin-right: 6px !important)
-youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
-
-! YT - Remove more unwanted elements
 youtube.com###clarify-box, ytd-watch-flexy #clarify-box
 www.youtube.com###country-code
 www.youtube.com###voice-search-button
