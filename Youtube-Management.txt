@@ -5,6 +5,19 @@
 ! Licence: MIT licence
 !
 
+! explore categories
+www.youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important;)
+www.youtube.com##ytd-feed-filter-chip-bar-renderer:has(yt-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
+m.youtube.com##ytm-feed-filter-chip-bar-renderer:has(ytm-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
+www.youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+
+! YT - Remove filter categories on home, search and playlist pages
+youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
+youtube.com###chip-bar.style-scope.ytd-search-header-renderer
+youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m:style(flex-direction: row-reverse !important)
+youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-trailing .yt-spec-button-shape-next__icon:style(margin-left: -6px !important; margin-right: 6px !important)
+youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
+
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
 youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
@@ -112,18 +125,6 @@ youtube.com##.html5-video-player.ended-mode .ytp-fullscreen-grid
 youtube.com##.html5-video-player.ended-mode.ytp-autonav-endscreen-cancelled-state .html5-endscreen:style( display: block !important; )
 youtube.com##.html5-video-player.ytp-fullscreen.ended-mode.ytp-autonav-endscreen-cancelled-state .html5-endscreen:style( top: 48px !important; )
 
-! explore categories
-www.youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important;)
-www.youtube.com##ytd-feed-filter-chip-bar-renderer:has(yt-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
-m.youtube.com##ytm-feed-filter-chip-bar-renderer:has(ytm-chip-cloud-chip-renderer[chip-style=STYLE_HOME_FILTER])
-www.youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-
-! YT - Remove filter categories on home, search and playlist pages
-youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
-youtube.com###chip-bar.style-scope.ytd-search-header-renderer
-youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m:style(flex-direction: row-reverse !important)
-youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-trailing .yt-spec-button-shape-next__icon:style(margin-left: -6px !important; margin-right: 6px !important)
-youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
 
 !! Non-Youtube stuff
 
