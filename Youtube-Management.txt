@@ -168,8 +168,6 @@ youtube.com##.ytp-volume-slider:style(min-height: 40px !important;)
 youtube.com##.ytp-prev-button:style(width: 36px !important)
 youtube.com##.ytp-next-button:style(width: 36px !important)
 
-! Hide floating buttons in fullscreen
-youtube.com##.ytp-overlay-bottom-right
 ! Hide Tooltips
 youtube.com##.ytp-tooltip
 ! Hide More Videos button
