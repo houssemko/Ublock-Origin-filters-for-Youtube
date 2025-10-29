@@ -28,8 +28,7 @@ Inspired by community-driven efforts to streamline YouTube’s increasingly busy
 
 - Hides YouTube Shorts . 
 - Removes “Suggested for you” and “Watch later” sections  
-- Cleans up the homepage and search results  
-- Optional rules for video page minimalism  
+- Cleans up the homepage   
 
 ## 🙏 Credits
 
