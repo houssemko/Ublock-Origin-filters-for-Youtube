@@ -147,6 +147,7 @@ www.youtube.com###country-code
 
 ! Remove thanks button
 www.youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
+
 ! YouTube player controls with blur and transparency
 youtube.com##.ytp-play-button:style(background: rgba(0, 0, 0, 0.3) !important;)
 youtube.com##.ytp-volume-icon:style(background: rgba(0, 0, 0, 0.3) !important;)
@@ -156,6 +157,6 @@ youtube.com##.ytp-next-button:style(background: rgba(0, 0, 0, 0.3) !important;)
 youtube.com##.ytp-chrome-controls:style(background: rgba(0, 0, 0, 0.3) !important;)
 youtube.com##.ytp-progress-bar-container:style(background: rgba(0, 0, 0, 0.3) !important;)
 youtube.com##.ytp-time-display:style(background: rgba(0, 0, 0, 0.3) !important;)
-youtube.com##.ytp-settings-button:style(backdrop-filter: blur(10px) !important; background: rgba(0, 0, 0, 0.3) !important;)
-youtube.com##.ytp-fullscreen-button:style(backdrop-filter: blur(10px) !important; background: rgba(0, 0, 0, 0.3) !important;)
+youtube.com##.ytp-settings-button:style(background: rgba(0, 0, 0, 0.3) !important;)
+youtube.com##.ytp-fullscreen-button:style(background: rgba(0, 0, 0, 0.3) !important;)
 
