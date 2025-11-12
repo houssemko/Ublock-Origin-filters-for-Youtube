@@ -151,6 +151,6 @@ www.youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
 ! YouTube Delhi UI player controls with blur and glassmorphism
 ! youtube.com##.ytp-pill-container:style(backdrop-filter: blur(12px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
 ! youtube.com##.ytp-big-mode .ytp-pill-container:style(backdrop-filter: blur(12px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytp-left-controls:style(backdrop-filter: blur(12px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytp-right-controls:style(backdrop-filter: blur(12px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
-
+youtube.com##.ytp-left-controls:style(backdrop-filter: blur(5px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytp-right-controls:style(backdrop-filter: blur(5px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytp-time-display:style(backdrop-filter: blur(5px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 8px !important;)
