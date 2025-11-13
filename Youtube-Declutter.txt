@@ -4,7 +4,6 @@
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
-
 ! YouTube player controls with better contrast and blur
 youtube.com##.ytp-button.ytp-play-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
 youtube.com##.ytp-time-wrapper-delhi.ytp-time-wrapper:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
