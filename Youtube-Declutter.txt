@@ -1,5 +1,5 @@
 [uBlock Origin]
-! Title: YouTube Management
+! Title: YouTube Declutter
 ! Last modified: 2025/11/13
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
