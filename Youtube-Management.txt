@@ -154,4 +154,4 @@ youtube.com##.ytp-time-wrapper-delhi.ytp-time-wrapper:style(backdrop-filter: blu
 youtube.com##.ytp-volume-area:style(backdrop-filter: blur(3px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
 youtube.com##.ytp-right-controls:style(backdrop-filter: blur(3px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
 youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(3px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytp-fullscreen-quick-actions:style(backdrop-filter: blur(3px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost:style(backdrop-filter: blur(3px) !important; background: rgba(28, 28, 28, 0.5) !important; border-radius: 18px !important;)
