@@ -20,7 +20,7 @@ Inspired by community-driven efforts to streamline YouTube’s increasingly busy
 4. Scroll down to the **"Custom"** section.
 5. Paste the raw URL of this filter list:
    ```
-   https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/main/Youtube-Management.txt
+   https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/main/Youtube-Declutter.txt
    ```
 6. Click **"Apply changes"**.
 
