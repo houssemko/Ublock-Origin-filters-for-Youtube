@@ -148,10 +148,10 @@ www.youtube.com###country-code
 www.youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
 
 ! YouTube player controls with blur and glassmorphism
-youtube.com##.ytp-button.ytp-play-button:style(backdrop-filter: blur(5px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytp-time-wrapper-delhi.ytp-time-wrapper:style(backdrop-filter: blur(5px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytp-volume-area:style(backdrop-filter: blur(5px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytp-right-controls:style(backdrop-filter: blur(5px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(5px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost:style(backdrop-filter: blur(5px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
-youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(5px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytp-button.ytp-play-button:style(backdrop-filter: blur(1px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytp-time-wrapper-delhi.ytp-time-wrapper:style(backdrop-filter: blur(1px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytp-volume-area:style(backdrop-filter: blur(1px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytp-right-controls:style(backdrop-filter: blur(1px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(1px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost:style(backdrop-filter: blur(1px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
+youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(1px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
