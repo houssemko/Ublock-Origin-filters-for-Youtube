@@ -139,16 +139,6 @@ youtube.com##.html5-video-player.ended-mode .ytp-fullscreen-grid
 youtube.com##.html5-video-player.ended-mode.ytp-autonav-endscreen-cancelled-state .html5-endscreen:style( display: block !important; )
 youtube.com##.html5-video-player.ytp-fullscreen.ended-mode.ytp-autonav-endscreen-cancelled-state .html5-endscreen:style( top: 48px !important; )
 
-
-!! Non-Youtube stuff
-
-! Get rid of sites prompting to "Login with Google" unprompted
-! This only affects the site popups, standard auth flows still work
-||accounts.google.com/gsi/*$xhr,script,3p
-
-! Watched
-youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.3;)
-
 ! YT - Remove unwanted popups and annoyances
 youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
 youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
@@ -156,6 +146,9 @@ youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt
 youtube.com###cinematics.ytd-watch-flexy:remove()
 youtube.com###clarify-box, ytd-watch-flexy #clarify-box
 www.youtube.com###country-code
+
+! Watched
+youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.3;)
 
 ! Remove thanks button
 www.youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
