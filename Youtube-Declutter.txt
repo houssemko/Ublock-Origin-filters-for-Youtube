@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: 2025/11/14
+! Last modified: 2025/11/15
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -14,7 +14,7 @@ youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickA
 youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
 
 ! Style popup panels with translucency
-youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
+youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.8) !important;)
 www.youtube.com###header > .ytd-multi-page-menu-renderer.style-scope
 
 ! YT - Remove filter categories on home, search and playlist pages
