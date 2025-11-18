@@ -7,8 +7,6 @@ A curated set of **cosmetic filters** designed to declutter and enhance your You
 
 This filter list aims to:
 - Clean up YouTube’s cluttered interface  
-- Remove recommended videos, sidebars, and other non-essential elements  
-- Improve focus on the content you actually want to watch  
 
 Inspired by community-driven efforts to streamline YouTube’s increasingly busy layout .
 
