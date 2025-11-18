@@ -25,8 +25,8 @@ Inspired by community-driven efforts to streamline YouTube’s increasingly busy
 ## 📦 What’s Included
 
 - Hides YouTube Shorts . 
-- Removes “Suggested for you” and “Watch later” sections  
-- Cleans up the homepage   
+- Cleans up the homepage.
+- Increase the number of videos in the homepage.
 
 ## 🙏 Credits
 
