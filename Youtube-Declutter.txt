@@ -12,7 +12,6 @@ youtube.com##.ytp-right-controls:style(backdrop-filter: blur(2px) !important; ba
 youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
-! youtube.com##.ytp-button.ytp-live-badge:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 
 ! Style popup panels with translucency
 youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
