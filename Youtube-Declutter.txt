@@ -5,13 +5,14 @@
 ! Licence: MIT licence
 
 ! YouTube player controls with better contrast and blur
-youtube.com##.ytp-button.ytp-play-button:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
-youtube.com##.ytp-time-wrapper-delhi.ytp-time-wrapper:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
-youtube.com##.ytp-volume-area:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
-youtube.com##.ytp-right-controls:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
-youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
+youtube.com##.ytp-button.ytp-play-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
+youtube.com##.ytp-time-wrapper-delhi.ytp-time-wrapper:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
+youtube.com##.ytp-volume-area:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
+youtube.com##.ytp-right-controls:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
+youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
-youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
+youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
+www.youtube.com##.ytp-live.notranslate.ytp-time-display:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 
 ! Style popup panels with translucency
 youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
