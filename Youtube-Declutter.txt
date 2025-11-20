@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: jeu. 20 nov. 2025 09:29:12 UTC
+! Last modified: jeu. 20 nov. 2025 09:41:13 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -40,25 +40,15 @@ youtube.com##ytd-ghost-grid-renderer
 ! Remove annoying UI stuff
 youtube.com###teaser-carousel
 youtube.com###video-preview-container
-
-! Remove Voice Search button
-www.youtube.com###voice-search-button
-
-! Remove Create button
-www.youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
+youtube.com###voice-search-button
+youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
+youtube.com###hover-overlays
+youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
+youtube.com##.ytp-autonav-toggle.ytp-button
+youtube.com##ytd-miniplayer
 
 ! Block Playables on the homepage
 youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
-
-! Hide OverLays (2025-07-03 New Site Style, adding filter)
-youtube.com###hover-overlays
-youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
-
-! Hide Autoplay Indicator in the Video player controls
-www.youtube.com##.ytp-autonav-toggle.ytp-button
-
-! Hide the miniplayer pop up
-www.youtube.com##ytd-miniplayer
 
 ! Hide the "Mix - " music playlist suggestions on Home page
 youtube.com##ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^Mix - /))
