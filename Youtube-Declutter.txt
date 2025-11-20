@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: mer. 19 nov. 2025 15:21:13 UTC
+! Last modified: jeu. 20 nov. 2025 06:30:31 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -25,7 +25,9 @@ youtube.com###chip-bar.style-scope.ytd-search-header-renderer
 youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m:style(flex-direction: row-reverse !important)
 youtube.com##ytd-search-header-renderer .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-trailing .yt-spec-button-shape-next__icon:style(margin-left: -6px !important; margin-right: 6px !important)
 youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
-youtube.com##ytd-rich-section-renderer.ytd-rich-grid-renderer.style-scope > .ytd-rich-section-renderer.style-scope
+
+! Hide "Explore more topics" panel on home page
+youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
 
 ! Hide search suggestions drop downs
 ||suggestqueries-clients*.youtube.com/complete/search^
