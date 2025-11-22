@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: jeu. 20 nov. 2025 09:41:13 UTC
+! Last modified: sam. 22 nov. 2025 07:32:45 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -35,6 +35,7 @@ youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: conten
 
 ! Fix random / inconsistent gaps on youtube home + Hide none video shelves
 youtube.com##ytd-rich-item-renderer[is-in-first-column]:style(margin-left: calc(var(--ytd-rich-grid-item-margin)/2) !important)
+youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 youtube.com##ytd-ghost-grid-renderer
 
 ! Remove annoying UI stuff
