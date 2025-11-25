@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: mar. 25 nov. 2025 06:57:54 UTC
+! Last modified: mar. 25 nov. 2025 07:00:51 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -133,8 +133,6 @@ www.youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix
 www.youtube.com##ytd-grid-video-renderer:has(a[href^="/short looking for more? /shorts/"])
 www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
 
-! Remove empty spaces/gaps left after hiding elements
-www.youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
 ! Shorts in Recommendations
 www.youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
