@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: sam. 22 nov. 2025 07:32:45 UTC
+! Last modified: mar. 25 nov. 2025 06:57:54 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -136,15 +136,14 @@ www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
 ! Remove empty spaces/gaps left after hiding elements
 www.youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
+! Shorts in Recommendations
+www.youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
+
 !! 2025-10 New UI Garbage fixes
 ! Mostly via https://www.reddit.com/user/AchernarB/
 ! fix the dumb color-changing background on mouse-over for description
 youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
 youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
-! revert the end-panel video suggestion screen
-youtube.com##.html5-video-player.ended-mode .ytp-fullscreen-grid
-youtube.com##.html5-video-player.ended-mode.ytp-autonav-endscreen-cancelled-state .html5-endscreen:style( display: block !important; )
-youtube.com##.html5-video-player.ytp-fullscreen.ended-mode.ytp-autonav-endscreen-cancelled-state .html5-endscreen:style( top: 48px !important; )
 
 ! YT - Remove unwanted popups and annoyances
 youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
