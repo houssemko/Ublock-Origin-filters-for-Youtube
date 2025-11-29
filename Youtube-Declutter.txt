@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: sam. 29 nov. 2025 06:27:40 UTC
+! Last modified: sam. 29 nov. 2025 06:38:49 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -12,7 +12,7 @@ youtube.com##.ytp-right-controls:style(backdrop-filter: blur(2px) !important; ba
 youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
-youtube.com##.ytp-popup-content > .ytp-panel:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.3) !important; border-radius: 12px !important;)
+youtube.com###ytp-id-7 > .ytp-popup-content > .ytp-panel:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.4) !important;)
 
 ! Style popup panels with translucency
 youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
