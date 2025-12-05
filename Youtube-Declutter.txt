@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: ven. 05 déc. 2025 07:40:58 UTC 
+! Last modified: ven. 05 déc. 2025 07:43:53 UTC 
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -120,12 +120,6 @@ youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer
 
 ! Hide shorts from search resluts
 youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
-! youtube.com##ytd-search ytd-reel-shelf-renderer
-! youtube.com##ytd-search ytd-video-renderer:has(a[href^="/shorts/"])
-! youtube.com##ytd-search ytd-rich-shelf-renderer:has-text(Shorts)
-
-! Hide Shorts filter chip in search results
-youtube.com##yt-chip-cloud-chip-renderer:has-text(Shorts)
 
 ! Hide Shorts remixes in descriptions and suggestions
 www.youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix.*$/i))
@@ -133,7 +127,6 @@ www.youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix
 ! Hide Shorts by direct /shorts/ URL in links (additional catch-all for grids/search)
 www.youtube.com##ytd-grid-video-renderer:has(a[href^="/short looking for more? /shorts/"])
 www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
-
 
 ! Shorts in Recommendations
 www.youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
