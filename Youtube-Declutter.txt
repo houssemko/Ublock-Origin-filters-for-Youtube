@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: ven. 05 déc. 2025 07:43:53 UTC 
+! Last modified: ven. 05 déc. 2025 07:45:20 UTC 
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -118,7 +118,7 @@ youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Short
 ! Hide shorts in video descriptions
 youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text("Shorts remixing this video")
 
-! Hide shorts from search resluts
+! Hide shorts from search results
 youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
 
 ! Hide Shorts remixes in descriptions and suggestions
