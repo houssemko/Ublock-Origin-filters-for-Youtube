@@ -43,7 +43,6 @@ youtube.com##ytd-ghost-grid-renderer
 youtube.com###teaser-carousel
 youtube.com###video-preview-container
 youtube.com###voice-search-button
-youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
 youtube.com###hover-overlays
 youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
 youtube.com##.ytp-autonav-toggle.ytp-button
