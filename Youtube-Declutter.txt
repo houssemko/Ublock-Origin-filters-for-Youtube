@@ -92,12 +92,6 @@ youtube.com###clarify-box
 
 ! Hide the Clip button
 www.youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost
-
-! YT - Remove unwanted popups and annoyances
-youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
-youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
-youtube.com###cinematics.ytd-watch-flexy:remove()
  
 ! Hide all videos containing the phrase "#shorts"
 youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
@@ -149,4 +143,4 @@ www.youtube.com###country-code
 youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.7;)
 
 ! Remove thanks button
-www.youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
+youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
