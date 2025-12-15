@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: jeu. 11 déc. 2025 10:01:52 UTC
+! Last modified: lun. 15 déc. 2025 10:55:55 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -12,7 +12,6 @@ youtube.com##.ytp-right-controls:style(backdrop-filter: blur(2px) !important; ba
 youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
-youtube.com###ytp-id-7 > .ytp-popup-content > .ytp-panel:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.4) !important;)
 
 ! Style popup panels with translucency
 youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
@@ -44,7 +43,6 @@ youtube.com###teaser-carousel
 youtube.com###video-preview-container
 youtube.com###voice-search-button
 youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
-youtube.com###hover-overlays
 youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
 youtube.com##.ytp-autonav-toggle.ytp-button
 youtube.com##ytd-miniplayer
@@ -125,8 +123,6 @@ www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
 ! Shorts in Recommendations
 www.youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
 
-!! 2025-10 New UI Garbage fixes
-! Mostly via https://www.reddit.com/user/AchernarB/
 ! fix the dumb color-changing background on mouse-over for description
 youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
 youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
