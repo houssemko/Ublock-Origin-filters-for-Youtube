@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: lun. 15 déc. 2025 10:55:55 UTC
+! Last modified: mer. 17 déc. 2025 15:37:42 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -122,6 +122,9 @@ www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
 
 ! Shorts in Recommendations
 www.youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
+
+!!! recommendations sidebar
+www.youtube.com##ytd-tvfilm-offer-module-renderer
 
 ! fix the dumb color-changing background on mouse-over for description
 youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
