@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: mar. 30 déc. 2025 11:41:30 UTC
+! Last modified: mar. 30 déc. 2025 11:50:20 UTC
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -22,8 +22,6 @@ youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important;)
 youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
 youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
-
-! Hide "Explore more topics" panel on home page
 youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
 
 ! Hide search suggestions drop downs
@@ -46,6 +44,18 @@ youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button
 youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
 youtube.com##.ytp-autonav-toggle.ytp-button
 youtube.com##ytd-miniplayer
+
+! YT - Remove unwanted popups and annoyances
+youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
+youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
+youtube.com###cinematics.ytd-watch-flexy:remove()
+youtube.com###clarify-box, ytd-watch-flexy #clarify-box
+youtube.com###country-code
+youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
+
+! Watched video tint
+youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.7;)
 
 ! Block Playables on the homepage
 youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
@@ -130,16 +140,4 @@ www.youtube.com##ytd-tvfilm-offer-module-renderer
 youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
 youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
 
-! YT - Remove unwanted popups and annoyances
-youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
-youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
-youtube.com###cinematics.ytd-watch-flexy:remove()
-youtube.com###clarify-box, ytd-watch-flexy #clarify-box
-www.youtube.com###country-code
 
-! Watched
-youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.7;)
-
-! Remove thanks button
-youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
