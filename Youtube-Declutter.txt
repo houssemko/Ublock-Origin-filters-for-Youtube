@@ -112,6 +112,7 @@ youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer
 
 ! Hide shorts from search results
 youtube.com##ytd-item-section-renderer:has(h2:has-text(Shorts))
+youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
 
 ! Hide Shorts remixes in descriptions and suggestions
 www.youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix.*$/i))
