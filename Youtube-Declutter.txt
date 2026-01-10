@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: mar. 30 déc. 2025 11:50:20 UTC
+! Last modified: Sat Jan 10 01:42:56 PM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
