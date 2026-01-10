@@ -24,8 +24,35 @@ youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-ren
 youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
 youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
 
-! Hide search suggestions drop downs
-||suggestqueries-clients*.youtube.com/complete/search^
+ ---------- SEARCH ----------
+! Make individual search suggestions not take up like 10% of the screen height.
+youtube.com##.ytSuggestionComponentSuggestion:style(height: 36px !important;)
+! Make video thumbnails smaller in search results
+! (yes, the 1.2% less width for one of the rules is important)
+youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
+youtube.com##ytd-two-column-search-results-renderer a:is(.yt-lockup-view-model-wiz__content-image,.yt-lockup-view-model__content-image):style(min-width: 260px !important; width:48.8% !important; max-width: 320px !important;)
+! Fix channel info in video search results.
+youtube.com###channel-info:style(padding: 4px 0 !important;)
+youtube.com###channel-thumbnail
+
+! ------ WATCH (player) ------
+! Remove the "Contains paid promotion" popup on sponsored videos.
+! SponsorBlock gets rid of said paid promotions anyways.
+youtube.com##.ytp-paid-content-overlay-link
+! Hide channel logo/branding in the bottom-right corner of the video.
+youtube.com##.iv-branding
+! Remove background from time display.
+youtube.com##.ytp-time-display span.ytp-time-wrapper:remove-class(ytp-time-wrapper)
+! Remove featured product ads from in video.
+youtube.com##.ytp-featured-product
+! Remove the "Experiencing interruptions?" popup, added during a recent anti-adblock update.
+youtube.com##tp-yt-paper-toast:has(yt-formatted-string:has-text("interruptions?"))
+
+! --------- PLAYLISTS --------
+! Hide recommended playlists/videos when viewing playlists.
+youtube.com##ytd-item-section-renderer[is-playlist-video-container]
+youtube.com##ytd-shelf-renderer:has(#title:has-text("Recommended"))
+
 
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
