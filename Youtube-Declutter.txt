@@ -26,7 +26,7 @@ youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
 
  ---------- SEARCH ----------
 ! Make individual search suggestions not take up like 10% of the screen height.
-youtube.com##.ytSuggestionComponentSuggestion:style(height: 36px !important;)
+youtube.com##.ytSuggestionComponentSuggestion:style(height: 28px !important;)
 ! Make video thumbnails smaller in search results
 ! (yes, the 1.2% less width for one of the rules is important)
 youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
