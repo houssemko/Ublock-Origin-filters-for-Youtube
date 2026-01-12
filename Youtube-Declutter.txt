@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Mon Jan 12 12:36:40 PM UTC 2026
+! Last modified: Mon Jan 12 12:50:29 PM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -29,10 +29,6 @@ youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
 youtube.com##.ytSuggestionComponentSuggestion:style(height: 32px !important;)
 ! Make video thumbnails smaller in search results
 youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
-youtube.com##ytd-two-column-search-results-renderer a:is(.yt-lockup-view-model-wiz__content-image,.yt-lockup-view-model__content-image):style(min-width: 260px !important; width:48.8% !important; max-width: 320px !important;)
-! Fix channel info in video search results.
-youtube.com###channel-info:style(padding: 4px 0 !important;)
-youtube.com###channel-thumbnail
 
 ! ------ WATCH (player) ------
 ! Remove the "Contains paid promotion" popup on sponsored videos.
