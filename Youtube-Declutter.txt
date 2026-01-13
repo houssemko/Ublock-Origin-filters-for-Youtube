@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Mon Jan 12 12:50:29 PM UTC 2026
+! Last modified: Tue Jan 13 06:44:27 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -75,6 +75,7 @@ youtube.com###cinematics.ytd-watch-flexy:remove()
 youtube.com###clarify-box, ytd-watch-flexy #clarify-box
 youtube.com###country-code
 youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
+youtube.com##.ytd-rich-section-renderer.style-scope > .ytd-brand-video-shelf-renderer.style-scope
 
 ! Watched video tint
 youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.7;)
