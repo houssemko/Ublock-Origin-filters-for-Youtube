@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Tue Jan 13 06:44:27 AM UTC 2026
+! Last modified: Wed Jan 14 11:09:49 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -25,8 +25,9 @@ youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[pag
 youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
 
  ---------- SEARCH ----------
-! Make individual search suggestions not take up like 10% of the screen height.
-youtube.com##.ytSuggestionComponentSuggestion:style(height: 32px !important;)
+! Hide search suggestions drop downs
+||suggestqueries-clients*.youtube.com/complete/search^
+
 ! Make video thumbnails smaller in search results
 youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
 
@@ -34,12 +35,17 @@ youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-widt
 ! Remove the "Contains paid promotion" popup on sponsored videos.
 ! SponsorBlock gets rid of said paid promotions anyways.
 youtube.com##.ytp-paid-content-overlay-link
+
 ! Hide channel logo/branding in the bottom-right corner of the video.
 youtube.com##.iv-branding
+
 ! Remove background from time display.
 youtube.com##.ytp-time-display span.ytp-time-wrapper:remove-class(ytp-time-wrapper)
+
 ! Remove featured product ads from in video.
 youtube.com##.ytp-featured-product
+
+
 ! Remove the "Experiencing interruptions?" popup, added during a recent anti-adblock update.
 youtube.com##tp-yt-paper-toast:has(yt-formatted-string:has-text("interruptions?"))
 
