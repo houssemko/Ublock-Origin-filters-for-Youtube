@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Wed Jan 14 11:09:49 AM UTC 2026
+! Last modified: Mon Jan 19 07:12:26 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
@@ -45,7 +45,6 @@ youtube.com##.ytp-time-display span.ytp-time-wrapper:remove-class(ytp-time-wrapp
 ! Remove featured product ads from in video.
 youtube.com##.ytp-featured-product
 
-
 ! Remove the "Experiencing interruptions?" popup, added during a recent anti-adblock update.
 youtube.com##tp-yt-paper-toast:has(yt-formatted-string:has-text("interruptions?"))
 
@@ -54,7 +53,6 @@ youtube.com##tp-yt-paper-toast:has(yt-formatted-string:has-text("interruptions?"
 youtube.com##ytd-item-section-renderer[is-playlist-video-container]
 youtube.com##ytd-shelf-renderer:has(#title:has-text("Recommended"))
 
-
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
 youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
@@ -62,7 +60,6 @@ youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: conten
 ! Fix random / inconsistent gaps on youtube home + Hide none video shelves
 youtube.com##ytd-rich-item-renderer[is-in-first-column]:style(margin-left: calc(var(--ytd-rich-grid-item-margin)/2) !important)
 youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
-youtube.com##ytd-ghost-grid-renderer
 
 ! Remove annoying UI stuff
 youtube.com###teaser-carousel
@@ -72,6 +69,14 @@ youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button
 youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
 youtube.com##.ytp-autonav-toggle.ytp-button
 youtube.com##ytd-miniplayer
+
+! Remove Ads
+www.youtube.com##ytd-mealbar-promo-renderer
+www.youtube.com##ytd-carousel-ad-renderer
+www.youtube.com##ytd-ad-slot-renderer
+www.youtube.com##ytd-action-companion-ad-renderer
+www.youtube.com##.ytd-display-ad-renderer
+www.youtube.com###masthead-ad
 
 ! YT - Remove unwanted popups and annoyances
 youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
