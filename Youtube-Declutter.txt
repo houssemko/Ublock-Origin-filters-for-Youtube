@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Thu Jan 22 10:57:39 AM UTC 2026
+! Last modified: Thu Jan 22 05:47:06 PM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT lice
 
@@ -20,7 +20,7 @@ youtube.com###header > .ytd-multi-page-menu-renderer.style-scope
 
 ! ---------- SEARCH ----------
 ! Hide search suggestions drop downs
-||suggestqueries-clients*[.youtube.com/complete/search](https://www.google.com/search?q=https://.youtube.com/complete/search)^
+||suggestqueries-clients*.youtube.com/complete/search^
 
 ! Make video thumbnails smaller in search results
 youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
@@ -136,14 +136,14 @@ youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer
 youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
 
 ! Hide Shorts remixes in descriptions and suggestions
-www.youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix.*$/i))
+youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix.*$/i))
 
 ! Hide Shorts by direct /shorts/ URL in links (additional catch-all for grids/search)
-www.youtube.com##ytd-grid-video-renderer:has(a[href^="/short looking for more? /shorts/"])
-www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
+youtube.com##ytd-grid-video-renderer:has(a[href^="/short looking for more? /shorts/"])
+youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
 
 ! Shorts in Recommendations
-www.youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
+youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
 
 ! ---------- AI GARBAGE ----------
 ! Remove the AI generated summary
