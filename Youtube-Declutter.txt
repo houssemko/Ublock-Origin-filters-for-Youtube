@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Thu Jan 22 10:55:59 AM UTC 2026
+! Last modified: Thu Jan 22 10:57:39 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT lice
 
@@ -53,7 +53,7 @@ youtube.com###clarify-box
 youtube.com###clarify-box, ytd-watch-flexy #clarify-box
 
 ! Hide the Clip button
-[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost
+youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost
 
 ! Remove "Auto-dubbed" indicator
 youtube.com##yt-lockup-view-model.lockup.ytd-item-section-renderer:has-text(Auto-dubbed)
@@ -66,7 +66,7 @@ youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-samp
 youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
 
 ! recommendations sidebar
-[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-tvfilm-offer-module-renderer
+youtube.com##ytd-tvfilm-offer-module-renderer
 
 ! ---------- HOME & GENERAL LAYOUT ----------
 ! YT - Remove filter categories on home, search and playlist pages
