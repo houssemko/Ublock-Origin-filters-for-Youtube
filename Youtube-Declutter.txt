@@ -4,6 +4,7 @@
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT licence
 
+! ---------- PLAYER STYLING & UI ----------
 ! YouTube player controls with better contrast and blur
 youtube.com##.ytp-button.ytp-play-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytp-time-wrapper:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
@@ -17,23 +18,18 @@ youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter
 youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
 youtube.com###header > .ytd-multi-page-menu-renderer.style-scope
 
-! YT - Remove filter categories on home, search and playlist pages
-youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important;)
-youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
-youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
-youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
-
- ---------- SEARCH ----------
+! ---------- SEARCH ----------
 ! Hide search suggestions drop downs
-||suggestqueries-clients*.youtube.com/complete/search^
+||suggestqueries-clients*[.youtube.com/complete/search](https://www.google.com/search?q=https://.youtube.com/complete/search)^
 
 ! Make video thumbnails smaller in search results
 youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
 
-! ------ WATCH (player) ------
+! Hide shorts from search results
+youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
+
+! ---------- WATCH (PLAYER) ----------
 ! Remove the "Contains paid promotion" popup on sponsored videos.
-! SponsorBlock gets rid of said paid promotions anyways.
 youtube.com##.ytp-paid-content-overlay-link
 
 ! Hide channel logo/branding in the bottom-right corner of the video.
@@ -45,96 +41,79 @@ youtube.com##.ytp-time-display span.ytp-time-wrapper:remove-class(ytp-time-wrapp
 ! Remove featured product ads from in video.
 youtube.com##.ytp-featured-product
 
-! Remove the "Experiencing interruptions?" popup, added during a recent anti-adblock update.
+! Remove the "Experiencing interruptions?" popup.
 youtube.com##tp-yt-paper-toast:has(yt-formatted-string:has-text("interruptions?"))
 
-! --------- PLAYLISTS --------
-! Hide recommended playlists/videos when viewing playlists.
-youtube.com##ytd-item-section-renderer[is-playlist-video-container]
-youtube.com##ytd-shelf-renderer:has(#title:has-text("Recommended"))
+! Remove cinematic lighting (ambient mode)
+youtube.com###cinematics.ytd-watch-flexy:remove()
 
-! More Video Thumbs
+! Suppress under-video information boxes (Health sources, clarify box)
+youtube.com##ytd-shelf-renderer:has-text('From health sources')
+youtube.com###clarify-box
+youtube.com###clarify-box, ytd-watch-flexy #clarify-box
+
+! Hide the Clip button
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost
+
+! Remove "Auto-dubbed" indicator
+youtube.com##yt-lockup-view-model.lockup.ytd-item-section-renderer:has-text(Auto-dubbed)
+youtube.com##ytd-rich-item-renderer:has(.ytd-badge-supported-renderer:has-text(Auto-dubbed))
+youtube.com##ytd-rich-item-renderer:has(div.badge-shape-wiz__text:has-text(Auto-dubbed))
+youtube.com##ytd-rich-item-renderer:has(div.yt-badge-shape__text:has-text('Auto-dubbed'))
+
+! Fix the color-changing background on mouse-over for description
+youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
+youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
+
+! recommendations sidebar
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-tvfilm-offer-module-renderer
+
+! ---------- HOME & GENERAL LAYOUT ----------
+! Remove filter categories (chips) on home, search and playlist pages
+youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important;)
+youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
+youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
+youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
+
+! Increase Video Thumbnails per row
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
 youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
-! Fix gaps in video thumbnails due to removed ads, etc.
+! Fix gaps in video thumbnails due to removed ads
 youtube.com##ytd-rich-item-renderer:remove-attr(is-in-first-column)
-
-! Remove annoying UI stuff
-youtube.com###teaser-carousel
-youtube.com###video-preview-container
-youtube.com###voice-search-button
-youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
-youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
-youtube.com##.ytp-autonav-toggle.ytp-button
-youtube.com##ytd-miniplayer
-
-! Remove Ads
-www.youtube.com##ytd-mealbar-promo-renderer
-www.youtube.com##ytd-carousel-ad-renderer
-www.youtube.com##ytd-ad-slot-renderer
-www.youtube.com##ytd-action-companion-ad-renderer
-www.youtube.com##.ytd-display-ad-renderer
-www.youtube.com###masthead-ad
-
-! YT - Remove unwanted popups and annoyances
-youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
-youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
-youtube.com###cinematics.ytd-watch-flexy:remove()
-youtube.com###clarify-box, ytd-watch-flexy #clarify-box
-youtube.com###country-code
-youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
-youtube.com##.ytd-rich-section-renderer.style-scope > .ytd-brand-video-shelf-renderer.style-scope
 
 ! Watched video tint
 youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.7;)
 
-! Block Playables on the homepage
-youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
+! ---------- PLAYLISTS & MIXES ----------
+! Hide recommended playlists/videos when viewing playlists.
+youtube.com##ytd-item-section-renderer[is-playlist-video-container]
+youtube.com##ytd-shelf-renderer:has(#title:has-text("Recommended"))
 
-! Hide the "Mix - " music playlist suggestions on Home page
+! Hide the "Mix - " and "My Mix" music playlist suggestions
 youtube.com##ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^Mix - /))
 youtube.com##ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^My Mix/))
-
-! Hide Podcast and Video Playlist suggestions on Home page
-youtube.com##ytd-rich-item-renderer:has(a[href]:has-text(/^Podcast/))
-youtube.com##ytd-rich-item-renderer:has-text("View full playlist")
-
-! More playlist suppression filters
-youtube.com##ytd-item-section-renderer:has-text("View full playlist")
 youtube.com##.lockup.ytd-item-section-renderer:has-text("Mix - ")
 youtube.com##.lockup.ytd-item-section-renderer:has-text("My Mix")
 
-!! AI Garbage
-! Remove the AI generated summary
-youtube.com###expandable-metadata:has-text("AI-generated video summary")
-! Remove the 'Ask' button
-youtube.com##button-view-model > button:has(div.yt-spec-button-shape-next__button-text-content:has-text(Ask))
-! 2025-08-10 They're testing a freaking AI chat box in the middle of the home page?!
-youtube.com##ytd-rich-section-renderer:has(yt-talk-to-recs-view-model)
+! Hide Podcast and Video Playlist suggestions
+youtube.com##ytd-rich-item-renderer:has(a[href]:has-text(/^Podcast/))
+youtube.com##ytd-rich-item-renderer:has-text("View full playlist")
+youtube.com##ytd-item-section-renderer:has-text("View full playlist")
 
-! Hide Survey "What did you think of this video" rows
-youtube.com##ytd-inline-survey-renderer
+! ---------- ADS & PROMOTIONS ----------
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-mealbar-promo-renderer
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-carousel-ad-renderer
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-ad-slot-renderer
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-action-companion-ad-renderer
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##.ytd-display-ad-renderer
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)###masthead-ad
+youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
+youtube.com##.ytd-rich-section-renderer.style-scope > .ytd-brand-video-shelf-renderer.style-scope
 
-!!! Remove "Auto-dubbed" videos
-youtube.com##yt-lockup-view-model.lockup.ytd-item-section-renderer:has-text(Auto-dubbed)
-youtube.com##ytd-rich-item-renderer:has(.ytd-badge-supported-renderer:has-text(Auto-dubbed))
-youtube.com##ytd-rich-item-renderer:has(div.badge-shape-wiz__text:has-text(Auto-dubbed))
-! They changed the badge div name, including both for now to catch A-B testing
-youtube.com##ytd-rich-item-renderer:has(div.yt-badge-shape__text:has-text('Auto-dubbed'))
-
-! Hide the "Chat replay is disabled for this premire" box
-youtube.com##ytd-message-renderer.ytd-live-chat-frame.style-scope:has-text("Chat replay")
-
-! Suppress under-video information boxes
-youtube.com##ytd-shelf-renderer:has-text('From health sources')
-youtube.com###clarify-box
-
-! Hide the Clip button
-www.youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost
- 
-! Hide all videos containing the phrase "#shorts"
+! ---------- SHORTS ----------
+! Hide all videos containing shorts hashtags
 youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
 youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Shorts))
 youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#short))
@@ -146,30 +125,46 @@ youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
 youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
 youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:has(ytd-video-renderer:has([overlay-style="SHORTS"]))
 
-! Hide shorts section on homepage
+! Hide shorts shelf/sections
 youtube.com##ytd-rich-section-renderer:has(#rich-shelf-header:has-text(Shorts))
 youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Shorts))
 
-! Hide shorts in video descriptions
+! Hide shorts in video descriptions and suggestions
 youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text("Shorts remixing this video")
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix.*$/i))
 
-! Hide shorts from search results
-youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
+! Shorts in Recommendations (Sidebar)
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
 
-! Hide Shorts remixes in descriptions and suggestions
-www.youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix.*$/i))
+! Hide Shorts by direct URL
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-grid-video-renderer:has(a[href^="/short looking for more? /shorts/"])
+[www.youtube.com](https://www.google.com/search?q=https://www.youtube.com)##ytd-video-renderer:has(a[href^="/shorts/"])
 
-! Hide Shorts by direct /shorts/ URL in links (additional catch-all for grids/search)
-www.youtube.com##ytd-grid-video-renderer:has(a[href^="/short looking for more? /shorts/"])
-www.youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
+! ---------- AI GARBAGE ----------
+! Remove the AI generated summary
+youtube.com###expandable-metadata:has-text("AI-generated video summary")
+! Remove the 'Ask' button
+youtube.com##button-view-model > button:has(div.yt-spec-button-shape-next__button-text-content:has-text(Ask))
+! Remove AI chat box on home page
+youtube.com##ytd-rich-section-renderer:has(yt-talk-to-recs-view-model)
 
-! Shorts in Recommendations
-www.youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
+! ---------- UI ANNOYANCES & POPUPS ----------
+! Remove specific annoying UI elements
+youtube.com###teaser-carousel
+youtube.com###video-preview-container
+youtube.com###voice-search-button
+youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
+youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
+youtube.com##.ytp-autonav-toggle.ytp-button
+youtube.com##ytd-miniplayer
+youtube.com###country-code
+youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
 
-!!! recommendations sidebar
-www.youtube.com##ytd-tvfilm-offer-module-renderer
+! Remove unwanted flow renderers and dialogs (Premium, trials, surveys, etc.)
+youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
+youtube.com##ytd-inline-survey-renderer
+youtube.com##ytd-message-renderer.ytd-live-chat-frame.style-scope:has-text("Chat replay")
 
-! fix the dumb color-changing background on mouse-over for description
-youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
-youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
-
+! Block Playables on the homepage
+youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
