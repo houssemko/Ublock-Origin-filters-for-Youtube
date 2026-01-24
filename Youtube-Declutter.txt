@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Sat Jan 24 06:53:40 AM UTC 2026
+! Last modified: Sat Jan 24 09:01:10 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT lice
 
@@ -52,6 +52,10 @@ youtube.com###cinematics.ytd-watch-flexy:remove()
 youtube.com##ytd-shelf-renderer:has-text('From health sources')
 youtube.com###clarify-box
 youtube.com###clarify-box, ytd-watch-flexy #clarify-box
+
+! Remove mouseover background from description boxes
+youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
+youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
 
 ! Hide the Clip button
 youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost
