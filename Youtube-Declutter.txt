@@ -1,9 +1,20 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Sat Jan 24 09:01:10 AM UTC 2026
+! Last modified: Sat Jan 24 01:23:22 PM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
+! ---------- SEARCH ----------
+! Hide search suggestions drop downs
+||suggestqueries-clients*.youtube.com/complete/search^
+
+! Make video thumbnails smaller in search results
+youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
+
+! Hide shorts from search results
+youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
+
+! ---------- WATCH (PLAYER) ----------
 ! ---------- PLAYER STYLING & UI ----------
 ! YouTube player controls with better contrast and blur
 youtube.com##.ytp-button.ytp-play-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
@@ -19,17 +30,6 @@ youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter
 youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
 youtube.com###header > .ytd-multi-page-menu-renderer.style-scope
 
-! ---------- SEARCH ----------
-! Hide search suggestions drop downs
-||suggestqueries-clients*.youtube.com/complete/search^
-
-! Make video thumbnails smaller in search results
-youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
-
-! Hide shorts from search results
-youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
-
-! ---------- WATCH (PLAYER) ----------
 ! Remove the "Contains paid promotion" popup on sponsored videos.
 youtube.com##.ytp-paid-content-overlay-link
 
@@ -83,7 +83,6 @@ youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
 
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
-youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
 ! Fix gaps in video thumbnails due to removed ads
 youtube.com##ytd-rich-item-renderer:remove-attr(is-in-first-column)
