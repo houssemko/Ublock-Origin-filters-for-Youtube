@@ -2,7 +2,7 @@
 ! Title: YouTube Declutter
 ! Last modified: Sat Jan 24 09:01:10 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
-! Licence: MIT lice
+! Licence: MIT license 
 
 ! ---------- PLAYER STYLING & UI ----------
 ! YouTube player controls with better contrast and blur
