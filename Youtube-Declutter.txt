@@ -9,7 +9,7 @@
 ||suggestqueries-clients*.youtube.com/complete/search^
 
 ! Make video thumbnails smaller in search results
-youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 260px !important; width:50% !important; max-width: 320px !important;)
+youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 240px !important; width:50% !important; max-width: 300px !important;)
 
 ! Hide shorts from search results
 youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
