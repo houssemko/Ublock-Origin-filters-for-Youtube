@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Sat Jan 24 01:24:12 PM UTC 2026
+! Last modified: Tue Jan 27 06:53:06 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
@@ -21,7 +21,7 @@ youtube.com##.ytp-button.ytp-play-button:style(backdrop-filter: blur(2px) !impor
 youtube.com##.ytp-time-wrapper:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytp-volume-area:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytp-right-controls:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
-youtube.com##.ytp-fullscreen-quick-actions:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.3) !important; border-radius: 18px !important;)
+youtube.com##.ytp-fullscreen-quick-actions:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.5) !important; border-radius: 18px !important;)
 youtube.com##.ytp-button.ytp-chapter-title:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytPlayerQuickActionButtonsHostDisableBackdropFilter.ytPlayerQuickActionButtonsHostCompactControls.ytPlayerQuickActionButtonsHost:style(backdrop-filter: blur(2px) !important; background: rgba(20, 20, 20, 0.6) !important; border-radius: 18px !important;)
 youtube.com##.ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
