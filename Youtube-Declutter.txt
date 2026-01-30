@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Tue Jan 27 10:36:48 AM UTC 2026
+! Last modified: Fri Jan 30 07:08:14 PM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
@@ -11,6 +11,7 @@ youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope
 youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
 youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
+youtube.com###dismissible youtube.com##.dismissible youtube.com##[id*="dismissible"] youtube.com##[class*="dismissible"]
 
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
