@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Fri Jan 30 07:08:14 PM UTC 2026
+! Last modified: Sun Feb  1 05:43:57 PM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
@@ -47,6 +47,15 @@ www.youtube.com##.ytd-display-ad-renderer
 www.youtube.com###masthead-ad
 youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
 youtube.com##.ytd-rich-section-renderer.style-scope > .ytd-brand-video-shelf-renderer.style-scope
+www.youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false)
+www.youtube.com##+js(set, Object.prototype.adBlocksFound, false)
+www.youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, [])
+www.youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, trueFunc)
+www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
+www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.web_enable_ab_rsp_cl, false)
+www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.ab_pl_man, false)
+||googlevideo.com/videoplayback$xhr,3p,method=get,domain=www.youtube.com
+www.youtube.com/watch##+js(set, ytInitialData, undefined)
 
 ! ---------- AI GARBAGE ----------
 ! Remove the AI generated summary
