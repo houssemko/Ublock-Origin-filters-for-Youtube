@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Fri Feb  6 05:45:28 PM UTC 2026
+! Last modified: Fri Feb  6 05:48:03 PM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
@@ -24,19 +24,19 @@ youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbn
 
 ! ---------- PLAYLISTS & MIXES ----------
 ! Hide recommended playlists/videos when viewing playlists.
-youtube.com##ytd-item-section-renderer[is-playlist-video-container]
-youtube.com##ytd-shelf-renderer:has(#title:has-text("Recommended"))
+youtube.com##[page-subtype="home"] ytd-item-section-renderer[is-playlist-video-container]
+youtube.com##[page-subtype="home"] ytd-shelf-renderer:has(#title:has-text("Recommended"))
 
 ! Hide the "Mix - " and "My Mix" music playlist suggestions
-youtube.com##ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^Mix - /))
-youtube.com##ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^My Mix/))
-youtube.com##.lockup.ytd-item-section-renderer:has-text("Mix - ")
-youtube.com##.lockup.ytd-item-section-renderer:has-text("My Mix")
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^Mix - /))
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^My Mix/))
+youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:has-text("Mix - ")
+youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:has-text("My Mix")
 
 ! Hide Podcast and Video Playlist suggestions
-youtube.com##ytd-rich-item-renderer:has(a[href]:has-text(/^Podcast/))
-youtube.com##ytd-rich-item-renderer:has-text("View full playlist")
-youtube.com##ytd-item-section-renderer:has-text("View full playlist")
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href]:has-text(/^Podcast/))
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has-text("View full playlist")
+youtube.com##[page-subtype="home"] ytd-item-section-renderer:has-text("View full playlist")
 
 ! ---------- ADS & PROMOTIONS ----------
 youtube.com##ytd-mealbar-promo-renderer
