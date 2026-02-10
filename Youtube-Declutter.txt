@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Sat Feb  7 07:10:51 AM UTC 2026
+! Last modified: Tue Feb 10 06:29:47 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
@@ -15,10 +15,10 @@ youtube.com##ytd-browse[page-subtype="home"] #dismissible
 
 ! More Video Thumbs
 youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
+youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
 
 ! Fix gaps in video thumbnails due to removed ads
 youtube.com##ytd-rich-item-renderer:remove-attr(is-in-first-column)
-youtube.com##ytd-rich-grid-row,#contents.ytd-rich-agrid-row:style(display: contents !important)
 
 ! Watched video tint
 youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.7;)
