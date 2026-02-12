@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Tue Feb 10 06:29:47 AM UTC 2026
+! Last modified: Thu Feb 12 06:03:29 PM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
@@ -38,23 +38,6 @@ youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:has-text("M
 youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href]:has-text(/^Podcast/))
 youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has-text("View full playlist")
 youtube.com##[page-subtype="home"] ytd-item-section-renderer:has-text("View full playlist")
-
-! ---------- ADS & PROMOTIONS ----------
-youtube.com##ytd-mealbar-promo-renderer
-youtube.com##ytd-carousel-ad-renderer
-youtube.com##ytd-ad-slot-renderer
-youtube.com##ytd-action-companion-ad-renderer
-youtube.com##.ytd-display-ad-renderer
-youtube.com###masthead-ad
-youtube.com##ytd-video-quality-promo-renderer, ytd-mealbar-promo-renderer, tp-yt-iron-overlay-backdrop.opened
-youtube.com##.ytd-rich-section-renderer.style-scope > .ytd-brand-video-shelf-renderer.style-scope
-youtube.com##+js(set, yt.config_.openPopupConfig.supportedPopups.adBlockMessageViewModel, false)
-youtube.com##+js(set, Object.prototype.adBlocksFound, false)
-youtube.com##+js(set, ytplayer.config.args.raw_player_response.adPlacements, [])
-youtube.com##+js(set, Object.prototype.hasAllowedInstreamAd, trueFunc)
-youtube.com##+js(nano-stb, resolve(1), *, 0.001)
-youtube.com/watch##+js(set, ytInitialData, undefined)
-youtube.com##ytd-rich-section-renderer ytd-statement-banner-renderer
 
 ! ---------- AI GARBAGE ----------
 ! Remove the AI generated summary
