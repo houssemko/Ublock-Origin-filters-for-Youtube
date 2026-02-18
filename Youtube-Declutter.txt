@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Tue Feb 17 05:29:57 PM UTC 2026
+! Last modified: Wed Feb 18 11:56:35 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
@@ -111,7 +111,7 @@ youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-i
 ! ---------- WATCH (PLAYER) ----------
 ! ---------- PLAYER STYLING & UI ----------
 ! YouTube player controls with better contrast and blur
-youtube.com##.ytp-button.ytp-play-button, .ytp-time-wrapper, .ytp-volume-area, .ytp-right-controls, .ytp-button.ytp-chapter-title, .ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(10, 10, 10, 0.6) !important; border-radius: 18px !important;)
+youtube.com##ytp-fullscreen-quick-actions, .ytp-button.ytp-play-button, .ytp-time-wrapper, .ytp-volume-area, .ytp-right-controls, .ytp-button.ytp-chapter-title, .ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(0, 0, 0, 0.5) !important; border-radius: 18px !important;)
 
 ! Style popup panels with translucency
 youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
