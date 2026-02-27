@@ -20,7 +20,11 @@ Inspired by community-driven efforts to streamline YouTube’s increasingly busy
    ```
    https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/main/Youtube-Declutter.txt
    ```
-6. Click **"Apply changes"**.
+ If you're using Adblock Plus 
+    ```
+   [https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/main/Youtube-Declutter.txt](https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/refs/heads/main/YouTube%20Declutter%20(Adblock%20Plus%20syntax).txt) ```
+    
+7. Click **"Apply changes"**.
 
 ## 📦 What’s Included
 
