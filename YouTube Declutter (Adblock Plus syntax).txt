@@ -1,0 +1,183 @@
+! Title: YouTube Declutter (Adblock Plus syntax)
+! Last modified: Mon Feb 23 06:26:58 AM UTC 2026
+! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
+! Licence: MIT license 
+
+! ---------- HOME & GENERAL LAYOUT ----------
+! YT - Remove filter categories on home, search and playlist pages
+youtube.com#$##frosted-glass { height: 60px !important; top: 0 !important; }
+youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
+youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
+youtube.com##ytd-rich-section-renderer:-abp-contains(Explore more topics)
+youtube.com##ytd-browse[page-subtype="home"] #dismissible
+
+! More Video Thumbs
+youtube.com#$#ytd-rich-grid-renderer, html { --ytd-rich-grid-items-per-row: 5 !important; }
+youtube.com#$#ytd-rich-grid-row,#contents.ytd-rich-grid-row { display: contents !important; }
+
+! Fix gaps in video thumbnails due to removed ads
+! Unsupported in ABP (DOM mutation): youtube.com##ytd-rich-item-renderer:remove-attr(is-in-first-column)
+
+! Watched video tint
+youtube.com#$#ytd-thumbnail:-abp-has(#progress), yt-thumbnail-view-model:-abp-has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment) { opacity: 0.7; }
+
+! ---------- PLAYLISTS & MIXES ----------
+! Hide recommended playlists/videos when viewing playlists.
+youtube.com##[page-subtype="home"] ytd-item-section-renderer[is-playlist-video-container]
+youtube.com##[page-subtype="home"] ytd-shelf-renderer:-abp-has(#title:-abp-contains(Recommended))
+
+! Hide the "Mix - " and "My Mix" music playlist suggestions
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:-abp-has(a[href*="start_radio=1"]:-abp-contains(Mix - ))
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:-abp-has(a[href*="start_radio=1"]:-abp-contains(My Mix))
+youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:-abp-contains(Mix - )
+youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:-abp-contains(My Mix)
+
+! Hide Podcast and Video Playlist suggestions
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:-abp-has(a[href]:-abp-contains(Podcast))
+youtube.com##[page-subtype="home"] ytd-rich-item-renderer:-abp-contains(View full playlist)
+youtube.com##[page-subtype="home"] ytd-item-section-renderer:-abp-contains(View full playlist)
+
+! ---------- AI GARBAGE ----------
+! Remove the AI generated summary
+youtube.com###expandable-metadata:-abp-contains(AI-generated video summary)
+! Remove the 'Ask' button
+youtube.com##button-view-model > button:-abp-has(div.yt-spec-button-shape-next__button-text-content:-abp-contains(Ask))
+! Remove AI chat box on home page
+youtube.com##ytd-rich-section-renderer:-abp-has(yt-talk-to-recs-view-model)
+
+! ---------- UI ANNOYANCES & POPUPS ----------
+! Remove specific annoying UI elements
+youtube.com###teaser-carousel
+youtube.com###video-preview-container
+youtube.com###voice-search-button
+youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
+youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
+youtube.com##.ytp-autonav-toggle.ytp-button
+youtube.com##ytd-miniplayer
+youtube.com###country-code
+youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
+youtube.com##a.ytp-menuitem
+
+! Remove unwanted flow renderers and dialogs
+youtube.com##.YtdTalkToRecsFlowRendererHost:-abp-contains(What hobbies are you interested in developing?)
+! Regex converted to multiple -abp-contains declarations as ABP does not support regex in text matchers
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(following Premium)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(Choose all that apply)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(Become a member)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(Free trial)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(How are your)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(How interested)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(Live TV)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(Wish videos)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(background play)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(better TV)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(cable box)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(cable reimagined)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(hidden fees)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(of YouTube TV)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(on YouTube TV)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(unlimited DVR)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(with YouTube TV)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(without the ads)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(try this feature)
+youtube.com##tp-yt-paper-dialog.ytd-popup-container:-abp-contains(Terms apply)
+youtube.com##ytd-inline-survey-renderer
+youtube.com##ytd-message-renderer.ytd-live-chat-frame.style-scope:-abp-contains("Chat replay")
+
+! Block Playables on the homepage
+youtube.com##ytd-rich-section-renderer:-abp-has([title^="YouTube Playables"])
+
+! ---------- SEARCH ----------
+! Hide search suggestions drop downs
+||suggestqueries-clients*.youtube.com/complete/search^
+
+! Make video thumbnails smaller in search results
+youtube.com#$#ytd-two-column-search-results-renderer ytd-thumbnail { min-width: 240px !important; width:50% !important; max-width: 300px !important; }
+
+! ---------- SHORTS ----------
+! Hide all videos containing the phrase "#shorts"
+youtube.com##ytd-grid-video-renderer:-abp-has(#video-title:-abp-contains(#shorts))
+youtube.com##ytd-grid-video-renderer:-abp-has(#video-title:-abp-contains(#Shorts))
+youtube.com##ytd-grid-video-renderer:-abp-has(#video-title:-abp-contains(#short))
+youtube.com##ytd-grid-video-renderer:-abp-has(#video-title:-abp-contains(#Short))
+
+! Hide all videos with the shorts indicator on the thumbnail
+youtube.com##ytd-grid-video-renderer:-abp-has([overlay-style="SHORTS"])
+youtube.com##ytd-rich-item-renderer:-abp-has([overlay-style="SHORTS"])
+youtube.com##ytd-video-renderer:-abp-has([overlay-style="SHORTS"])
+youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:-abp-has(ytd-video-renderer:-abp-has([overlay-style="SHORTS"]))
+
+! Hide shorts section on homepage
+youtube.com##ytd-rich-section-renderer:-abp-has(#rich-shelf-header:-abp-contains(Shorts))
+youtube.com##ytd-reel-shelf-renderer:-abp-has(.ytd-reel-shelf-renderer:-abp-contains(Shorts))
+
+! Hide shorts in video descriptions
+youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:-abp-contains(Shorts remixing this video)
+
+! Hide shorts from search results
+youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:-abp-contains(Shorts)
+
+! Hide Shorts remixes in descriptions and suggestions
+! Regex converted to explicit text matches as ABP does not support regex in text matchers
+youtube.com##ytd-reel-shelf-renderer:-abp-has(#title:-abp-contains(Shorts Remix))
+youtube.com##ytd-reel-shelf-renderer:-abp-has(#title:-abp-contains(Shorts remix))
+
+! Hide Shorts by direct /shorts/ URL in links (additional catch-all for grids/search)
+youtube.com##ytd-grid-video-renderer:-abp-has(a[href^="/short looking for more? /shorts/"])
+youtube.com##ytd-video-renderer:-abp-has(a[href^="/shorts/"])
+
+! Shorts in Recommendations
+youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
+
+! ---------- WATCH (PLAYER) ----------
+! ---------- PLAYER STYLING & UI ----------
+! YouTube player controls with better contrast and blur
+youtube.com#$#.ytp-fullscreen-quick-actions, .ytp-button.ytp-play-button, .ytp-time-wrapper, .ytp-volume-area, .ytp-right-controls, .ytp-button.ytp-chapter-title, .ytp-button.ytp-fullscreen-grid-expand-button { backdrop-filter: blur(2px) !important; background: rgba(0, 0, 0, 0.5) !important; border-radius: 18px !important; }
+
+! Style popup panels with translucency
+youtube.com#$##contentWrapper > .ytd-popup-container.style-scope { background: rgba(10, 10, 10, 0.8) !important; }
+youtube.com###header > .ytd-multi-page-menu-renderer.style-scope
+
+! Remove the "Contains paid promotion" popup on sponsored videos.
+youtube.com##.ytp-paid-content-overlay-link
+
+! Hide channel logo/branding in the bottom-right corner of the video.
+youtube.com##.iv-branding
+
+! Remove background from time display.
+! Unsupported in ABP (DOM mutation): youtube.com##.ytp-time-display span.ytp-time-wrapper:remove-class(ytp-time-wrapper)
+
+! Remove featured product ads from in video.
+youtube.com##.ytp-featured-product
+
+! Remove the "Experiencing interruptions?" popup.
+youtube.com##tp-yt-paper-toast:-abp-has(yt-formatted-string:-abp-contains(interruptions?))
+
+! Remove cinematic lighting (converted from :remove() DOM mutation to standard display hiding)
+youtube.com###cinematics.ytd-watch-flexy
+
+! Suppress under-video information boxes
+youtube.com##ytd-shelf-renderer:-abp-contains(From health sources)
+youtube.com###clarify-box
+youtube.com###clarify-box, ytd-watch-flexy #clarify-box
+
+! Remove mouseover background from description boxes
+! Unsupported in ABP (Scriptlet injections): youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
+! Unsupported in ABP (Scriptlet injections): youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
+
+! Hide the Clip button
+youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost
+
+! Remove "Auto-dubbed" indicator
+youtube.com##yt-lockup-view-model.lockup.ytd-item-section-renderer:-abp-contains(Auto-dubbed)
+youtube.com##ytd-rich-item-renderer:-abp-has(.ytd-badge-supported-renderer:-abp-contains(Auto-dubbed))
+youtube.com##ytd-rich-item-renderer:-abp-has(div.badge-shape-wiz__text:-abp-contains(Auto-dubbed))
+youtube.com##ytd-rich-item-renderer:-abp-has(div.yt-badge-shape__text:-abp-contains(Auto-dubbed))
+
+! Fix the color-changing background on mouse-over for description
+! Unsupported in ABP (Scriptlet injections): youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
+! Unsupported in ABP (Scriptlet injections): youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
+
+! recommendations sidebar
+youtube.com##ytd-tvfilm-offer-module-renderer
