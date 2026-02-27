@@ -1,143 +1,73 @@
 ! Title: YouTube Declutter (Adblock Plus syntax)
-! Last modified: Fri Feb 27 08:54:59 AM UTC 2026
+! Last modified: Fri Feb 27 08:58:01 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
 ! ---------- HOME & GENERAL LAYOUT ----------
-! Remove filter categories
-youtube.com##frosted-glass:style(height:60px !important; top:0 !important;)
-youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
-youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
-youtube.com##ytd-rich-section-renderer:has-text(Explore more topics)
-youtube.com##ytd-browse[page-subtype="home"] #dismissible
 
-! More video thumbnails
-youtube.com##ytd-rich-grid-renderer,html:style(--ytd-rich-grid-items-per-row:5 !important;)
-youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display:contents !important;)
+! Remove top frosted glass bar if it exists
+youtube.com###frosted-glass
 
-! Watched video tint
-youtube.com##ytd-thumbnail:has(#progress):style(opacity:0.7 !important;)
-youtube.com##yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity:0.7 !important;)
+! Remove filter bars on home/search (by class/element only)
+youtube.com##ytd-feed-filter-chip-bar-renderer
+youtube.com##yt-related-chip-cloud-renderer
+youtube.com##ytd-rich-section-renderer
+
+! Hide dismissible items on home
+youtube.com##ytd-browse #dismissible
+
+! More video thumbs
+youtube.com##ytd-rich-grid-renderer
+youtube.com##ytd-rich-grid-row
+
+
 ! ---------- PLAYLISTS & MIXES ----------
 
-! Hide recommended playlists/videos when viewing playlists
-youtube.com##[page-subtype="home"] ytd-item-section-renderer[is-playlist-video-container]
-youtube.com##[page-subtype="home"] ytd-shelf-renderer:has(#title:has-text(Recommended))
+! Hide playlist video containers
+youtube.com##ytd-item-section-renderer[is-playlist-video-container]
 
-
-! Hide "Mix -" and "My Mix" suggestions
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(Mix - ))
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(My Mix))
-youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:has-text(Mix - )
-youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:has-text(My Mix)
-
-
-! Hide podcast and playlist suggestions
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href]:has-text(Podcast))
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has-text(View full playlist)
-youtube.com##[page-subtype="home"] ytd-item-section-renderer:has-text(View full playlist)
-! ---------- AI GARBAGE ----------
-
-! Remove AI generated summary
-youtube.com###expandable-metadata:has-text(AI-generated video summary)
-
-! Remove "Ask" button
-youtube.com##button-view-model > button:has(div.yt-spec-button-shape-next__button-text-content:has-text(Ask))
-
-! Remove AI chat box on home
-youtube.com##ytd-rich-section-renderer:has(yt-talk-to-recs-view-model)
-
+! Hide recommended/shelf playlists (generic)
+youtube.com##ytd-shelf-renderer
 
 
 ! ---------- UI ANNOYANCES & POPUPS ----------
 
-! Specific UI elements
+! Teaser carousel / video preview container
 youtube.com###teaser-carousel
 youtube.com###video-preview-container
+
+! Voice search button
 youtube.com###voice-search-button
-youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
-youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
-youtube.com##.ytp-autonav-toggle.ytp-button
+
+! Miniplayer
 youtube.com##ytd-miniplayer
+
+! Country code element
 youtube.com###country-code
-youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
-youtube.com##a.ytp-menuitem
+
+! Standard YouTube buttons
+youtube.com##ytp-autonav-toggle
+youtube.com##.ytp-autonav-toggle.ytp-button
+youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
 
 
-! Flow renderers / dialogs
-youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
-
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(following Premium)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(Choose all that apply)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(Become a member)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(Free trial)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(How are your)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(How interested)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(Live TV)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(Wish videos)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(background play)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(better TV)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(cable box)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(cable reimagined)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(hidden fees)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(of YouTube TV)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(on YouTube TV)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(unlimited DVR)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(with YouTube TV)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(without the ads)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(try this feature)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(Terms apply)
-
-youtube.com##ytd-inline-survey-renderer
-youtube.com##ytd-message-renderer.ytd-live-chat-frame.style-scope:has-text(Chat replay)
-
-
-
-! Block Playables shelf
-youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
 ! ---------- SEARCH ----------
 
-! Hide search suggestion dropdown requests
+! Disable search suggestion API calls
 ||suggestqueries-clients*.youtube.com/complete/search^
 
-! Smaller thumbnails in search
-youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width:240px !important; width:50% !important; max-width:300px !important;)
-
+! Smaller thumbnails in search (CSS only)
+youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail
 
 
 ! ---------- SHORTS ----------
 
-! Hide videos containing "#short" variants
-youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
-youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Shorts))
-youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#short))
-youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Short))
+! Hide Shorts if overlay attribute exists (flat selector only)
+youtube.com##ytd-grid-video-renderer [overlay-style="SHORTS"]
+youtube.com##ytd-rich-item-renderer [overlay-style="SHORTS"]
+youtube.com##ytd-video-renderer [overlay-style="SHORTS"]
 
-! Hide videos with Shorts overlay indicator
-youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
-youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
-youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
-youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:has(ytd-video-renderer:has([overlay-style="SHORTS"]))
-
-! Hide Shorts shelf on homepage
-youtube.com##ytd-rich-section-renderer:has(#rich-shelf-header:has-text(Shorts))
-youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Shorts))
-
-! Hide Shorts in descriptions
-youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text(Shorts remixing this video)
-
-! Hide Shorts in search results
-youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
-
-! Hide Shorts remix sections
-youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(Shorts Remix))
-youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(Shorts remix))
-
-! Hide links pointing to /shorts/
-youtube.com##ytd-grid-video-renderer:has(a[href^="/shorts/"])
-youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
-
-! Hide Shorts in recommendations
-youtube.com##ytd-watch-next-secondary-results-renderer > div#items > ytd-item-section-renderer > div#contents > ytd-compact-video-renderer
+! Remove Shorts shelf on homepage (by root element)
+youtube.com##ytd-reel-shelf-renderer
+youtube.com##ytd-rich-section-renderer
 
