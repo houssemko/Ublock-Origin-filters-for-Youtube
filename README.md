@@ -1,14 +1,10 @@
-```markdown
 # uBlock Origin Filters for YouTube
 
 A curated set of **cosmetic filters** designed to declutter and enhance your YouTube browsing experience by removing distractions and unwanted UI elements.
 
 ## 🎯 Purpose
 
-This filter list aims to:
-- Clean up YouTube's cluttered interface
-
-Inspired by community-driven efforts to streamline YouTube's increasingly busy layout.
+This filter list aims to clean up YouTube's cluttered interface. Inspired by community-driven efforts to streamline YouTube's increasingly busy layout.
 
 ## 🛠️ How to Use
 
@@ -20,7 +16,7 @@ Inspired by community-driven efforts to streamline YouTube's increasingly busy l
    ```
    https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/main/Youtube-Declutter.txt
    ```
-   If you're using Adblock Plus:
+   If you're using Adblock Plus, use this URL instead:
    ```
    https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/refs/heads/main/YouTube%20Declutter%20(Adblock%20Plus%20syntax).txt
    ```
@@ -28,16 +24,15 @@ Inspired by community-driven efforts to streamline YouTube's increasingly busy l
 
 ## 📦 What's Included
 
-- Hides YouTube Shorts
-- Cleans up the homepage
-- Increases the number of videos in the homepage
+- Hides YouTube Shorts.
+- Cleans up the homepage.
+- Increases the number of videos on the homepage.
 
 ## 🙏 Credits
 
-- [**na-parse/naparse-ublock-origin**](https://github.com/na-parse/naparse-ublock-origin) – Most of the filters come from their great work
+- [**na-parse/naparse-ublock-origin**](https://github.com/na-parse/naparse-ublock-origin) — Most of the filters come from their great work.
 - [**Mnky313/uBlock_YouTube_Filters**](https://github.com/Mnky313/uBlock_YouTube_Filters)
 
 ## 📄 License
 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
-```
