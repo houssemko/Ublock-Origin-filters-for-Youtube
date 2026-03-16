@@ -146,7 +146,7 @@ youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-samp
 youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
 
 ! Hide the Clip button
-youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost
+youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost:has(div.yt-spec-button-shape-next__button-text-content:has-text('Clip'))
 
 ! Remove "Auto-dubbed" indicator
 youtube.com##yt-lockup-view-model.lockup.ytd-item-section-renderer:has-text(Auto-dubbed)
