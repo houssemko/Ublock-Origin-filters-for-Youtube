@@ -119,44 +119,6 @@ www.youtube.com,35.190.94.206###teaser.ytd-comments-entry-point-header-renderer
 youtube.com,35.190.94.206##.ytp-pause-overlay
 youtube.com,35.190.94.206##.show-video-thumbnail-button
 
-! ————————————————————————————————————————————————————————————————
-
-! ——— "TV" mode ———
-
-! Removes most video suggestions in TV mode
-! Sadly, at least one suggestion had to remain in each row, or else you couldn't browse down to the Home and Search buttons.
-www.youtube.com,35.190.94.206##.exp-enable-live-seeking > #leanback > #app-markup > #watch > #bottom-half .pivot-row .watchable-tile:nth-of-type(1n+2)
-
-! Removes the Trending button in the top bar. At least I think it's the Trending button.
-!!!www.youtube.com##div.top-nav-tab:nth-of-type(2)
-
-! Removes the Gaming button in the top bar
-!!!www.youtube.com#?#div.top-nav-tab:has-text(/^Gaming$/)
-
-! ————————————————————————————————————————————————————————————————
-
-!#if adguard_app_android
-!#include uBO%20list%20extensions/YouTubeEvenMorePureVideoExperience-AdGuardApps.txt
-!#endif
-
-! ————————————————————————————————————————————————————————————————
-! Removes recommended channels on home page, subscriptions page and feed
-!!!youtube.com##.home .branded-page-v2-secondary-col
-!!!youtube.com##.feed .branded-page-v2-secondary-col
-!!!youtube.com##.guide-builder-v2 .branded-page-v2-secondary-col
-! Removes sharing tab below videos
-||youtube.com/share_ajax?action_get_share_box=1&video_id=$xmlhttprequest
-youtube.com,35.190.94.206##.action-panel-trigger[role=button][data-trigger-for=action-panel-share]
-youtube.com,35.190.94.206##.yt-uix-button[data-trigger-for=action-panel-share]
-! Removes recommended and featured videos in the endscreen
-||ytimg.com/yts/swfbin/player-*/endscreen.swf$object-subrequest,domain=youtube.com|youtu.be|youtube-nocookie.com
-youtube.com,youtube-nocookie.com##.html5-endscreen-content
-youtube.com,youtube-nocookie.com##.html5-endscreen
-! Removes related/featured/popular channels on channel pages
-youtube.com,35.190.94.206##.branded-page-v2-secondary-col > .branded-page-related-channels > .yt-uix-tooltip
-youtube.com,35.190.94.206##.branded-page-v2-secondary-col > .branded-page-related-channels > .yt-uix-tooltip + .branded-page-related-channels-list
-! "Subscribe to see more videos from this channel" on home page after watching some video of a channel
-!!!youtube.com###channel-subscription-promo-in-feed
 !#endif
 !#endif
 !#endif
