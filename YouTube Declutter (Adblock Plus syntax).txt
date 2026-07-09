@@ -38,15 +38,6 @@ www.youtube.com,35.190.94.206##ytd-guide-entry-renderer:has(a[href*=UClgRkhTL3_h
 ! Removes the app drawer in the top-right menu
 www.youtube.com,35.190.94.206###button:has([aria-label*=app])
 
-! Removes video suggestions
-##.ytp-endscreen-content
-youtube.com,youtubekids.com###related
-m.youtube.com##ytm-watch ytm-compact-video-renderer
-m.youtube.com##[section-identifier=related-items]
-/annotations_module.js$script,domain=youtube.com|youtu.be|youtube-nocookie.com
-/endscreen.js$script,domain=youtube.com|youtu.be|youtube-nocookie.com
-inv.riverside.rocks,invidio.xamh.de,invidious-jp.kavin.rocks,invidious-us.kavin.rocks,invidious.exonip.de,invidious.hub.ne.kr,invidious.kavin.rocks,invidious.namazso.eu,invidious.snopyta.org,vid.mint.lgbt,vid.puffyan.us,y.com.cm,yewtu.be,youtube.076.ne.jp,yt.artemislena.eu,yt.didw.to,ytb.trom.tf,ytprivate.com,c7hqkpkpemu6e7emz5b4vyz7idjgdvgaaa3dyimmeojqbgpea3xqjoid.onion,w6ijuptxiku4xpnnaetxvnkc5vqcdu7mgns2u77qefoixi63vbvnpnqd.onion,kbjggqkzv65ivcqj6bumvp337z6264huv5kpkwuv6gu5yjiskvan7fad.onion,grwp24hodrefzvjjuccrkw3mjq4tzhaaq32amf33dzpmuxe7ilepcmad.onion,hpniueoejy4opn7bc4ftgazyqjoeqwlvh2uiku2xqku6zpoa4bf5ruid.onion,invidc4i7i5uci6cledxsao6w7ng5etpflagdzoxj3yhipztwzvqjryd.onion,osbivz6guyeahrwp2lnwyjk2xos342h4ocsxyqrlaopqjuhwn2djiiyd.onion,p4ozd76i5zmqepf6xavtehswcve2taptxbwpswkq5osfvncwylavllid.onion,k7mnd6gyelynroxoncodxjz44fd5ch2ewfjl2a6ozmg3jy6fwyxq3cyd.onion##.pure-u-lg-1-5 > .h-box:has(.pure-u-14-24)
-hooktube.com##.col-lg-4:has(#video-list)
 ! Seems to remove "Recommended for you" suggestions
 ||youtube.com/related_ajax^
 ! Hopefully removes recommendations from the 2024 very slow rollout of "Video recommendations below the video"… hopefully. Hard to tell at the moment.
