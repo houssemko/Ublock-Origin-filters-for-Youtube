@@ -26,9 +26,6 @@ This filter list aims to clean up YouTube's cluttered interface. Inspired by com
 - Cleans up the homepage.
 - Increases the number of videos on the homepage.
 
-### ⚠️ Known limitation on uBO Lite
-Two filters that suppress a mouseover color-sampling effect on the description box rely on scriptlet injection (`##+js(...)`), which uBO Lite does not support (no arbitrary JS string injection under Manifest V3). This effect will still appear for uBOL users; everything else in the list functions the same across both versions.
-
 ## 🙏 Credits
 - [**na-parse/naparse-ublock-origin**](https://github.com/na-parse/naparse-ublock-origin) — Most of the filters come from their great work.
 - [**Mnky313/uBlock_YouTube_Filters**](https://github.com/Mnky313/uBlock_YouTube_Filters)
