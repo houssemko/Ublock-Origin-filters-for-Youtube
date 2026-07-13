@@ -1,141 +1,50 @@
-[uBlock Origin Lite]
-! Title: YouTube Declutter (uBO Lite compatible)
-! Last modified: Mon Jul 13 2026
-! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
-! Licence: MIT license
-! NOTE: Requires "Custom filters" enabled and filtering mode set to
-! Optimal or Complete for youtube.com in the uBO Lite dashboard.
-! Scriptlet filters (##+js) removed — not supported in uBO Lite (no
-! arbitrary JS string injection under Manifest V3).
+# uBlock Origin Filters for YouTube
+A curated set of **cosmetic filters** designed to declutter and enhance your YouTube browsing experience by removing distractions and unwanted UI elements.
 
-! ---------- HOME & GENERAL LAYOUT ----------
-youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important;)
-youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
-youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
-youtube.com##ytd-rich-section-renderer:has-text("Explore more topics")
-youtube.com##ytd-browse[page-subtype="home"] #dismissible
+## 🎯 Purpose
+This filter list aims to clean up YouTube's cluttered interface. Inspired by community-driven efforts to streamline YouTube's increasingly busy layout.
 
-! More Video Thumbs
-youtube.com##ytd-rich-grid-renderer, html:style(--ytd-rich-grid-items-per-row: 5 !important;)
-youtube.com##ytd-rich-grid-row,#contents.ytd-rich-grid-row:style(display: contents !important)
+## 🛠️ How to Use
 
-! Fix gaps in video thumbnails due to removed ads
-youtube.com##ytd-rich-item-renderer:remove-attr(is-in-first-column)
+### uBlock Origin (full version)
+1. **Install [uBlock Origin](https://ublockorigin.com/)** (available for Chrome, Firefox, Edge, and more).
+2. Open the uBlock Origin dashboard (click the extension icon → ⚙️ *Dashboard*).
+3. Go to the **"Filter lists"** tab.
+4. Scroll down to the **"Custom"** section.
+5. Paste the raw URL of this filter list:
+   ```
+   https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/main/Youtube-Declutter.txt
+   ```
+   If you're using Adblock Plus, use this URL instead:
+   ```
+   https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/refs/heads/main/YouTube%20Declutter%20(Adblock%20Plus%20syntax).txt
+   ```
+6. Click **"Apply changes"**.
 
-! Watched video tint
-youtube.com##ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment):style(opacity: 0.7;)
+### uBlock Origin Lite (uBOL / Manifest V3)
+uBO Lite added support for custom filters and subscribing to external filter lists. It still cannot run scriptlet injection (`##+js(...)`), so a small number of filters in this list won't work in uBOL.
 
-! ---------- PLAYLISTS & MIXES ----------
-youtube.com##[page-subtype="home"] ytd-item-section-renderer[is-playlist-video-container]
-youtube.com##[page-subtype="home"] ytd-shelf-renderer:has(#title:has-text("Recommended"))
+1. **Install [uBlock Origin Lite](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh)**.
+2. Open the uBO Lite dashboard (click the extension icon → *Dashboard* icon).
+3. Go to the **"Custom filters"** pane.
+4. Add this filter list URL:
+   ```
+   https://github.com/houssemko/Ublock-Origin-filters-for-Youtube/blob/main/youtube-declutter-Ubo-lite.txt
+   ```
+5. Save/apply the custom filters.
+6. Go to the **"Filtering mode"** section, find `youtube.com`, and set it to **Optimal** (or **Complete** if some filters still don't apply). Cosmetic filters won't take effect on Basic mode.
 
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^Mix - /))
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href*="start_radio=1"]:has-text(/^My Mix/))
-youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:has-text("Mix - ")
-youtube.com##[page-subtype="home"] .lockup.ytd-item-section-renderer:has-text("My Mix")
+## 📦 What's Included
+- Hides YouTube Shorts.
+- Cleans up the homepage.
+- Increases the number of videos on the homepage.
 
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has(a[href]:has-text(/^Podcast/))
-youtube.com##[page-subtype="home"] ytd-rich-item-renderer:has-text("View full playlist")
-youtube.com##[page-subtype="home"] ytd-item-section-renderer:has-text("View full playlist")
+### ⚠️ Known limitation on uBO Lite
+Two filters that suppress a mouseover color-sampling effect on the description box rely on scriptlet injection (`##+js(...)`), which uBO Lite does not support (no arbitrary JS string injection under Manifest V3). This effect will still appear for uBOL users; everything else in the list functions the same across both versions.
 
-! ---------- AI GARBAGE ----------
-youtube.com###expandable-metadata:has-text("AI-generated video summary")
-youtube.com##button-view-model > button:has(div.yt-spec-button-shape-next__button-text-content:has-text(Ask))
-youtube.com##ytd-rich-section-renderer:has(yt-talk-to-recs-view-model)
+## 🙏 Credits
+- [**na-parse/naparse-ublock-origin**](https://github.com/na-parse/naparse-ublock-origin) — Most of the filters come from their great work.
+- [**Mnky313/uBlock_YouTube_Filters**](https://github.com/Mnky313/uBlock_YouTube_Filters)
 
-! ---------- UI ANNOYANCES & POPUPS ----------
-youtube.com###teaser-carousel
-youtube.com###video-preview-container
-youtube.com###voice-search-button
-youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
-youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
-youtube.com##.ytp-autonav-toggle.ytp-button
-youtube.com##ytd-miniplayer
-youtube.com###country-code
-youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
-youtube.com##a.ytp-menuitem
-
-youtube.com##.YtdTalkToRecsFlowRendererHost:has-text(What hobbies are you interested in developing?)
-youtube.com##tp-yt-paper-dialog.ytd-popup-container:has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
-youtube.com##ytd-inline-survey-renderer
-youtube.com##ytd-message-renderer.ytd-live-chat-frame.style-scope:has-text("Chat replay")
-
-youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
-
-! ---------- SEARCH ----------
-! Hide search suggestions drop downs
-||suggestqueries-clients*.youtube.com/complete/search^
-
-! Make video thumbnails smaller in search results
-youtube.com##ytd-two-column-search-results-renderer ytd-thumbnail:style(min-width: 240px !important; width:50% !important; max-width: 300px !important;)
-
-! ---------- SHORTS ----------
-youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#shorts))
-youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Shorts))
-youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#short))
-youtube.com##ytd-grid-video-renderer:has(#video-title:has-text(#Short))
-
-youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
-youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
-youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
-youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:has(ytd-video-renderer:has([overlay-style="SHORTS"]))
-
-youtube.com##ytd-rich-section-renderer:has(#rich-shelf-header:has-text(Shorts))
-youtube.com##ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:has-text(Shorts))
-
-youtube.com##ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:has-text("Shorts remixing this video")
-
-youtube.com##ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:has-text(Shorts)
-
-youtube.com##ytd-reel-shelf-renderer:has(#title:has-text(/(^| )Shorts.?Remix.*$/i))
-
-youtube.com##ytd-grid-video-renderer:has(a[href^="/short looking for more? /shorts/"])
-youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
-
-youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
-
-! ---------- WATCH (PLAYER) ----------
-youtube.com##.ytp-fullscreen-quick-actions, .ytp-button.ytp-play-button, .ytp-time-wrapper, .ytp-volume-area, .ytp-right-controls, .ytp-button.ytp-chapter-title, .ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(0, 0, 0, 0.5) !important; border-radius: 18px !important;)
-
-youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
-youtube.com###header > .ytd-multi-page-menu-renderer.style-scope
-
-! Remove the "Contains paid promotion" popup on sponsored videos.
-youtube.com##.ytp-paid-content-overlay-link
-
-! Hide channel logo/branding in the bottom-right corner of the video.
-youtube.com##.iv-branding
-
-! Remove background from time display.
-youtube.com##.ytp-time-display span.ytp-time-wrapper:remove-class(ytp-time-wrapper)
-
-! Remove featured product ads from in video.
-youtube.com##.ytp-featured-product
-
-! Remove the "Experiencing interruptions?" popup.
-youtube.com##tp-yt-paper-toast:has(yt-formatted-string:has-text("interruptions?"))
-
-! Remove cinematic lighting
-youtube.com###cinematics.ytd-watch-flexy:remove()
-
-! Suppress under-video information boxes
-youtube.com##ytd-shelf-renderer:has-text('From health sources')
-youtube.com###clarify-box
-youtube.com###clarify-box, ytd-watch-flexy #clarify-box
-
-! Hide the Clip button
-youtube.com###flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost:has(div.yt-spec-button-shape-next__button-text-content:has-text('Clip'))
-
-! Remove "Auto-dubbed" indicator
-youtube.com##yt-lockup-view-model.lockup.ytd-item-section-renderer:has-text(Auto-dubbed)
-youtube.com##ytd-rich-item-renderer:has(.ytd-badge-supported-renderer:has-text(Auto-dubbed))
-youtube.com##ytd-rich-item-renderer:has(div.badge-shape-wiz__text:has-text(Auto-dubbed))
-youtube.com##ytd-rich-item-renderer:has(div.yt-badge-shape__text:has-text('Auto-dubbed'))
-
-! recommendations sidebar
-youtube.com##ytd-tvfilm-offer-module-renderer
-
-! ---------- REMOVED: unsupported in uBO Lite (scriptlet injection) ----------
-! youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
-! youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
+## 📄 License
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
