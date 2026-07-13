@@ -21,19 +21,6 @@ This filter list aims to clean up YouTube's cluttered interface. Inspired by com
    ```
 6. Click **"Apply changes"**.
 
-### uBlock Origin Lite (uBOL / Manifest V3)
-uBO Lite added support for custom filters and subscribing to external filter lists. It still cannot run scriptlet injection (`##+js(...)`), so a small number of filters in this list won't work in uBOL.
-
-1. **Install [uBlock Origin Lite](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh)**.
-2. Open the uBO Lite dashboard (click the extension icon → *Dashboard* icon).
-3. Go to the **"Custom filters"** pane.
-4. Add this filter list URL:
-   ```
-   https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/refs/heads/main/youtube-declutter-Ubo-lite.txt
-   ```
-5. Save/apply the custom filters.
-6. Go to the **"Filtering mode"** section, find `youtube.com`, and set it to **Optimal** (or **Complete** if some filters still don't apply). Cosmetic filters won't take effect on Basic mode.
-
 ## 📦 What's Included
 - Hides YouTube Shorts.
 - Cleans up the homepage.
