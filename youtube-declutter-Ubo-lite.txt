@@ -3,10 +3,6 @@
 ! Last modified: Mon Jul 13 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license
-! NOTE: Requires "Custom filters" enabled and filtering mode set to
-! Optimal or Complete for youtube.com in the uBO Lite dashboard.
-! Scriptlet filters (##+js) removed — not supported in uBO Lite (no
-! arbitrary JS string injection under Manifest V3).
 
 ! ---------- HOME & GENERAL LAYOUT ----------
 youtube.com###frosted-glass:style(height: 60px !important; top: 0 !important;)
