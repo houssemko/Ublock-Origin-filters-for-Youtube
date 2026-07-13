@@ -1,13 +1,12 @@
 # uBlock Origin Filters for YouTube
-
 A curated set of **cosmetic filters** designed to declutter and enhance your YouTube browsing experience by removing distractions and unwanted UI elements.
 
 ## 🎯 Purpose
-
 This filter list aims to clean up YouTube's cluttered interface. Inspired by community-driven efforts to streamline YouTube's increasingly busy layout.
 
 ## 🛠️ How to Use
 
+### uBlock Origin (full version)
 1. **Install [uBlock Origin](https://ublockorigin.com/)** (available for Chrome, Firefox, Edge, and more).
 2. Open the uBlock Origin dashboard (click the extension icon → ⚙️ *Dashboard*).
 3. Go to the **"Filter lists"** tab.
@@ -22,17 +21,27 @@ This filter list aims to clean up YouTube's cluttered interface. Inspired by com
    ```
 6. Click **"Apply changes"**.
 
-## 📦 What's Included
+### uBlock Origin Lite (uBOL / Manifest V3)
+uBO Lite is architecturally different from full uBO — it's fully declarative, so it cannot subscribe to a remote filter list URL the way uBO does, and it cannot run scriptlet injection (`##+js(...)`). Custom cosmetic and network filters must be pasted in manually, and a small number of filters in this list won't work in uBOL for that reason.
 
+1. **Install [uBlock Origin Lite](https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh)**.
+2. Open the uBO Lite dashboard (click the extension icon → *Dashboard* icon).
+3. Go to the **"Custom filters"** pane.
+4. Paste in the contents of [`Youtube-Declutter-uBOL.txt`](Youtube-Declutter-uBOL.txt) — the uBOL-compatible variant of this list, with scriptlet-based filters removed.
+5. Save/apply the custom filters.
+6. Go to the **"Filtering mode"** section, find `youtube.com`, and set it to **Optimal** (or **Complete** if some filters still don't apply). Cosmetic filters won't take effect on Basic mode.
+
+## 📦 What's Included
 - Hides YouTube Shorts.
 - Cleans up the homepage.
 - Increases the number of videos on the homepage.
 
-## 🙏 Credits
+### ⚠️ Known limitation on uBO Lite
+Two filters that suppress a mouseover color-sampling effect on the description box rely on scriptlet injection (`##+js(...)`), which uBO Lite does not support (no arbitrary JS string injection under Manifest V3). This effect will still appear for uBOL users; everything else in the list functions the same across both versions.
 
+## 🙏 Credits
 - [**na-parse/naparse-ublock-origin**](https://github.com/na-parse/naparse-ublock-origin) — Most of the filters come from their great work.
 - [**Mnky313/uBlock_YouTube_Filters**](https://github.com/Mnky313/uBlock_YouTube_Filters)
 
 ## 📄 License
-
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
