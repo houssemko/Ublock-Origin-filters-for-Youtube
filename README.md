@@ -29,7 +29,7 @@ uBO Lite added support for custom filters and subscribing to external filter lis
 3. Go to the **"Custom filters"** pane.
 4. Add this filter list URL:
    ```
-   https://github.com/houssemko/Ublock-Origin-filters-for-Youtube/blob/main/youtube-declutter-Ubo-lite.txt
+   https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/refs/heads/main/youtube-declutter-Ubo-lite.txt
    ```
 5. Save/apply the custom filters.
 6. Go to the **"Filtering mode"** section, find `youtube.com`, and set it to **Optimal** (or **Complete** if some filters still don't apply). Cosmetic filters won't take effect on Basic mode.
