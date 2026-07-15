@@ -6,7 +6,6 @@ This filter list aims to clean up YouTube's cluttered interface. Inspired by com
 
 ## 🛠️ How to Use
 
-### uBlock Origin (full version)
 1. **Install [uBlock Origin](https://ublockorigin.com/)** (available for Chrome, Firefox, Edge, and more).
 2. Open the uBlock Origin dashboard (click the extension icon → ⚙️ *Dashboard*).
 3. Go to the **"Filter lists"** tab.
@@ -14,10 +13,6 @@ This filter list aims to clean up YouTube's cluttered interface. Inspired by com
 5. Paste the raw URL of this filter list:
    ```
    https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/main/Youtube-Declutter.txt
-   ```
-   If you're using Adblock Plus, use this URL instead:
-   ```
-   https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/refs/heads/main/YouTube%20Declutter%20(Adblock%20Plus%20syntax).txt
    ```
 6. Click **"Apply changes"**.
 
