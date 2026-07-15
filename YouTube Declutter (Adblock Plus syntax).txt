@@ -1,124 +1,131 @@
-[Adblock Plus 3.15]
-! Title: ▶️ YouTube: Even More Pure Video Experience
-! Version: 08June2026v2
-! Expires: 6 days
-! Description: This list removes even more distracting or uncomfortable things on YouTube.
-! If you want to block even more things on top of these two lists, feel free to check out the anti-Autoplay (https://raw.githubusercontent.com/DandelionSprout/adfilt/master/StopAutoplayOnYouTube.txt) and anti-Elsagate (https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Anti-Elsagate%20List.txt) lists that I've made.
-! Homepage: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
-!#if !env_mv3
-!#if !ext_ubol
-!#if !adguard_ext_android_cb
-! ——— IMPORTANT NOTICE (10th of July 2019): After my lists were relicenced to become more accomodative and easier to swallow for differently licenced projects, I have decided to simply add the entries from "YouTube: Pure Video Experience" to my lists instead of mandating the use of both lists. ———
+[Adblock Plus 2.0]
+! Title: YouTube Declutter (converted from uBO syntax to ABP syntax)
+! Source: converted from "YouTube Declutter" (uBO list)
+! Notes: Lines using uBO-only DOM-mutation operators (:remove(), :remove-attr(),
+!        :remove-class()) and uBO scriptlets (##+js(...)) have NO reliable ABP
+!        equivalent and are listed separately at the bottom as NOT CONVERTIBLE.
+!        Everything below this line uses plain ## (native CSS) or #?# (ABP
+!        extended CSS, using :-abp-has-text in place of uBO's :has-text) or
+!        #$# (ABP CSS injection, in place of uBO's :style()).
 
-! Removes the YouTube Gaming button in the left-hand menu
-www.youtube.com,35.190.94.206##ytd-guide-entry-renderer:has(a[href*="/gaming"])
+! ---------- HOME & GENERAL LAYOUT ----------
+youtube.com#$##frosted-glass { height: 60px !important; top: 0 !important; }
+youtube.com##[page-subtype="home"] ytd-feed-filter-chip-bar-renderer.style-scope.ytd-rich-grid-renderer
+youtube.com##yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+youtube.com##ytd-item-section-renderer.style-scope.ytd-section-list-renderer[page-subtype="playlist"] > #header.ytd-item-section-renderer > ytd-feed-filter-chip-bar-renderer
+youtube.com#?#ytd-rich-section-renderer:-abp-has-text(Explore more topics)
+youtube.com##ytd-browse[page-subtype="home"] #dismissible
 
-! Removes the Trending button in the left-hand menu
-m.youtube.com##.scbrr-tab[href="/feed/trending"]
-m.youtube.com##ytm-pivot-bar-item-renderer:nth-of-type(2)
+! More Video Thumbs
+youtube.com#$#html { --ytd-rich-grid-items-per-row: 5 !important; }
+youtube.com#$##contents.ytd-rich-grid-row { display: contents !important; }
 
-! Removes the Discover button in the left-hand menu
-www.youtube.com,35.190.94.206##ytd-guide-entry-renderer:has(a[href*="feed/guide_builder"])
+! Watched video tint
+youtube.com#$#ytd-thumbnail:has(#progress), yt-thumbnail-view-model:has(.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment) { opacity: 0.7; }
 
-! Removes the pop-out player button in the video player
-www.youtube.com,35.190.94.206##.ytp-button.ytp-miniplayer-button
+! ---------- PLAYLISTS & MIXES ----------
+youtube.com##[page-subtype="home"] ytd-item-section-renderer[is-playlist-video-container]
+youtube.com#?#[page-subtype="home"] ytd-shelf-renderer:has(#title:-abp-has-text(Recommended))
 
-! Removes the Livestream button in the left-hand menu
-www.youtube.com,35.190.94.206##ytd-guide-entry-renderer:has(a[href*=UC4R8DWoMoI7CAwX8_LjQHig])
+youtube.com#?#[page-subtype="home"] ytd-rich-item-renderer:has(a[href*="start_radio=1"]:-abp-has-text(/^Mix - /))
+youtube.com#?#[page-subtype="home"] ytd-rich-item-renderer:has(a[href*="start_radio=1"]:-abp-has-text(/^My Mix/))
+youtube.com#?#[page-subtype="home"] .lockup.ytd-item-section-renderer:-abp-has-text(Mix - )
+youtube.com#?#[page-subtype="home"] .lockup.ytd-item-section-renderer:-abp-has-text(My Mix)
 
-! Removes the Homepage button in the left-hand menu
-!!!www.youtube.com##ytd-guide-entry-renderer:has(a[href="/"])
-!!!www.youtube.com##ytd-mini-guide-entry-renderer:has(a[href="/"])
-m.youtube.com##.scbrr-tab[href="/"]
-m.youtube.com##ytm-pivot-bar-item-renderer:first-of-type
+youtube.com#?#[page-subtype="home"] ytd-rich-item-renderer:has(a[href]:-abp-has-text(/^Podcast/))
+youtube.com#?#[page-subtype="home"] ytd-rich-item-renderer:-abp-has-text(View full playlist)
+youtube.com#?#[page-subtype="home"] ytd-item-section-renderer:-abp-has-text(View full playlist)
 
-! Removes the video store button in the left-hand menu
-www.youtube.com,35.190.94.206##ytd-guide-entry-renderer:has(a[href*=UClgRkhTL3_hImCAmdLfDE4g])
+! ---------- AI GARBAGE ----------
+youtube.com#?##expandable-metadata:-abp-has-text(AI-generated video summary)
+youtube.com#?#button-view-model > button:has(div.yt-spec-button-shape-next__button-text-content:-abp-has-text(Ask))
+youtube.com##ytd-rich-section-renderer:has(yt-talk-to-recs-view-model)
 
-! Removes the app drawer in the top-right menu
-www.youtube.com,35.190.94.206###button:has([aria-label*=app])
+! ---------- UI ANNOYANCES & POPUPS ----------
+youtube.com###teaser-carousel
+youtube.com###video-preview-container
+youtube.com###voice-search-button
+youtube.com###buttons > ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape
+youtube.com##yt-thumbnail-hover-overlay-toggle-actions-view-model
+youtube.com##.ytp-autonav-toggle.ytp-button
+youtube.com##ytd-miniplayer
+youtube.com###country-code
+youtube.com##yt-button-view-model.ytd-menu-renderer:nth-of-type(2)
+youtube.com##a.ytp-menuitem
 
-! Seems to remove "Recommended for you" suggestions
-||youtube.com/related_ajax^
-! Hopefully removes recommendations from the 2024 very slow rollout of "Video recommendations below the video"… hopefully. Hard to tell at the moment.
-! (Turned out to remove channels' video archives.)
-!!!youtube.com,~m.youtube.com##ytd-rich-grid-renderer
-! (20/12/2025)
-youtube.com,35.190.94.206##.ytp-fullscreen-grid-stills-container
-! Embeds on e.g. Discord (08/06/2026)
-youtube.com,35.190.94.206##.ytmCreatorEndscreenHost
+youtube.com#?#.YtdTalkToRecsFlowRendererHost:-abp-has-text(What hobbies are you interested in developing?)
+youtube.com#?#tp-yt-paper-dialog.ytd-popup-container:-abp-has-text(/following Premium|Choose all that apply|Become a member|Free trial|How are your|How interested|Live TV|Wish videos|background play|better TV|cable box|cable reimagined|hidden fees|of YouTube TV|on YouTube TV|unlimited DVR|with YouTube TV|without the ads|try this feature|Terms apply/)
+youtube.com##ytd-inline-survey-renderer
+youtube.com#?#ytd-message-renderer.ytd-live-chat-frame.style-scope:-abp-has-text(Chat replay)
 
-! Removes the like/dislike counters
-!#if false
-youtube.com,35.190.94.206##ytd-toggle-button-renderer #text
-youtube.com,35.190.94.206###sentiment
-m.youtube.com##.slim-video-metadata-actions > [data-button-id]:first-of-type .button-renderer-text
-!!!m.youtube.com##.slim-video-metadata-actions > [data-button-id]:nth-of-type(2) .button-renderer-text
-inv.riverside.rocks,invidio.xamh.de,invidious-jp.kavin.rocks,invidious-us.kavin.rocks,invidious.exonip.de,invidious.hub.ne.kr,invidious.kavin.rocks,invidious.namazso.eu,invidious.snopyta.org,vid.mint.lgbt,vid.puffyan.us,y.com.cm,yewtu.be,youtube.076.ne.jp,yt.artemislena.eu,yt.didw.to,ytb.trom.tf,ytprivate.com,c7hqkpkpemu6e7emz5b4vyz7idjgdvgaaa3dyimmeojqbgpea3xqjoid.onion,w6ijuptxiku4xpnnaetxvnkc5vqcdu7mgns2u77qefoixi63vbvnpnqd.onion,kbjggqkzv65ivcqj6bumvp337z6264huv5kpkwuv6gu5yjiskvan7fad.onion,grwp24hodrefzvjjuccrkw3mjq4tzhaaq32amf33dzpmuxe7ilepcmad.onion,hpniueoejy4opn7bc4ftgazyqjoeqwlvh2uiku2xqku6zpoa4bf5ruid.onion,invidc4i7i5uci6cledxsao6w7ng5etpflagdzoxj3yhipztwzvqjryd.onion,osbivz6guyeahrwp2lnwyjk2xos342h4ocsxyqrlaopqjuhwn2djiiyd.onion,p4ozd76i5zmqepf6xavtehswcve2taptxbwpswkq5osfvncwylavllid.onion,k7mnd6gyelynroxoncodxjz44fd5ch2ewfjl2a6ozmg3jy6fwyxq3cyd.onion###likes, #dislikes
-hooktube.com###video-stats .text-right
-hooktube.com###progress-bar-likes
-!#endif
-twitch.tv#?#.ffz__tooltip .stats:has-text(👍):has-text(👎)
+youtube.com##ytd-rich-section-renderer:has([title^="YouTube Playables"])
 
-! Removes the large grey [YouTube Kids / game info] buttons below gaming videos
-youtube.com,35.190.94.206##ytd-rich-metadata-renderer.ytd-rich-metadata-row-renderer
-m.youtube.com##ytm-watch-metadata-app-promo-renderer
-m.youtube.com##ytm-rich-metadata-renderer
+! ---------- SEARCH ----------
+||suggestqueries-clients*.youtube.com/complete/search^
+youtube.com#$#ytd-two-column-search-results-renderer ytd-thumbnail { min-width: 240px !important; width: 50% !important; max-width: 300px !important; }
 
-! Removes the Share arrow button in fullscreen mode and in embeds
-youtube.com,youtube-nocookie.com##button[class*=share-button]
+! ---------- SHORTS ----------
+youtube.com#?#ytd-grid-video-renderer:has(#video-title:-abp-has-text(#shorts))
+youtube.com#?#ytd-grid-video-renderer:has(#video-title:-abp-has-text(#Shorts))
+youtube.com#?#ytd-grid-video-renderer:has(#video-title:-abp-has-text(#short))
+youtube.com#?#ytd-grid-video-renderer:has(#video-title:-abp-has-text(#Short))
 
-! Aims to prevent video suggestions from showing up when pausing embedded videos
-##.ytp-scroll-min
-##.ytp-pause-overlay
-youtube.com,35.190.94.206##.ytp-scroll-min
-youtube.com,35.190.94.206##.ytp-pause-overlay
+youtube.com##ytd-grid-video-renderer:has([overlay-style="SHORTS"])
+youtube.com##ytd-rich-item-renderer:has([overlay-style="SHORTS"])
+youtube.com##ytd-video-renderer:has([overlay-style="SHORTS"])
+youtube.com##ytd-item-section-renderer.ytd-section-list-renderer[page-subtype="subscriptions"]:has(ytd-video-renderer:has([overlay-style="SHORTS"]))
 
-! Removes the frontpage link from the upper left YouTube logo (Not supported by ABP or AdBlock)
-youtube.com,35.190.94.206#?##logo:style(pointer-events: none !important; cursor: default !important)
+youtube.com#?#ytd-rich-section-renderer:has(#rich-shelf-header:-abp-has-text(Shorts))
+youtube.com#?#ytd-reel-shelf-renderer:has(.ytd-reel-shelf-renderer:-abp-has-text(Shorts))
 
-! Removes video epilogue suggestion overlays
-youtube.com,35.190.94.206##.ytp-ce-element-show
+youtube.com#?#ytd-reel-shelf-renderer.ytd-structured-description-content-renderer:-abp-has-text(Shorts remixing this video)
 
-! Removes a banner that promotes YouTube Premium
-youtube.com,35.190.94.206###masthead-ad
+youtube.com#?#ytd-search grid-shelf-view-model.ytGridShelfViewModelHost:-abp-has-text(Shorts)
 
-! Believed to remove sponsored description links inserted by rights holders
-www.youtube.com,35.190.94.206##ytd-metadata-row-renderer
+youtube.com#?#ytd-reel-shelf-renderer:has(#title:-abp-has-text(/(^| )Shorts.?Remix.*$/i))
 
-! Removes the Explore buttons in the left-hand menu
-www.youtube.com,35.190.94.206##ytd-guide-entry-renderer:has(a[href*="feed/explore"])
-www.youtube.com,35.190.94.206##ytd-mini-guide-entry-renderer:has(a[href*="feed/explore"])
+youtube.com##ytd-video-renderer:has(a[href^="/shorts/"])
 
-! Aims to remove the "Recommended" tickers on top of YouTube embeds
-##.ytp-cards-teaser
+youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-item-section-renderer > div[id="contents"] > ytd-compact-video-renderer
 
-! The "Experiencing interruptions" toast popup in the bottom corner when a video is bufferring (due to network congestion, underperforming hardware, or any other reason) (Thanks to https://gist.github.com/gidoBOSSftw5731; probably only works on Anglophone devices)
-www.youtube.com,35.190.94.206#?##toast:has(#text-container:has-text(/^.*experiencing inter{2}uptions.*$/i))
+! ---------- WATCH (PLAYER) ----------
+youtube.com#$#.ytp-fullscreen-quick-actions, .ytp-button.ytp-play-button, .ytp-time-wrapper, .ytp-volume-area, .ytp-right-controls, .ytp-button.ytp-chapter-title, .ytp-button.ytp-fullscreen-grid-expand-button { backdrop-filter: blur(2px) !important; background: rgba(0, 0, 0, 0.5) !important; border-radius: 18px !important; }
 
-! Block "My mix" and autogenerated playlists
-www.youtube.com,35.190.94.206##ytd-compact-radio-renderer:has(ytd-thumbnail-overlay-bottom-panel-renderer)
-www.youtube.com,35.190.94.206##ytd-rich-item-renderer:has(ytd-thumbnail-overlay-bottom-panel-renderer)
+youtube.com#$##contentWrapper > .ytd-popup-container.style-scope { background: rgba(10, 10, 10, 0.8) !important; }
+youtube.com###header > .ytd-multi-page-menu-renderer.style-scope
 
-! Same as above, but in the window after you finish a video. This does leave black squares where they were.
-www.youtube.com,35.190.94.206#?#a.ytp-suggestion-set.ytp-videowall-still:has(.ytp-videowall-still-listlabel-mix:not(:matches-css(display: none)))
+youtube.com##.ytp-paid-content-overlay-link
+youtube.com##.iv-branding
+youtube.com##.ytp-featured-product
 
-! Playlist recommendations under videos
-www.youtube.com,35.190.94.206##ytd-compact-playlist-renderer:has(ytd-thumbnail-overlay-side-panel-renderer)
+youtube.com#?#tp-yt-paper-toast:has(yt-formatted-string:-abp-has-text(interruptions?))
 
-! Homepage info banners (despite my list discouraging users from using the homepage in the first place)
-!!!www.youtube.com##.ytd-rich-section-renderer
+youtube.com###clarify-box
+youtube.com###clarify-box, ytd-watch-flexy #clarify-box
 
-! The overlays that are visible when you hover over a video for «Watch later» and «Add to queue»
-www.youtube.com,35.190.94.206###hover-overlays
+youtube.com#?##flexible-item-buttons > yt-button-view-model.ytd-menu-renderer > .ytd-menu-renderer.style-scope.ytSpecButtonViewModelHost:has(div.yt-spec-button-shape-next__button-text-content:-abp-has-text(Clip))
 
-! Removes comment teasers in the December 2021 revamp (The new comment box can still be loaded normally)
-www.youtube.com,35.190.94.206###teaser.ytd-comments-entry-point-header-renderer
+youtube.com#?#yt-lockup-view-model.lockup.ytd-item-section-renderer:-abp-has-text(Auto-dubbed)
+youtube.com#?#ytd-rich-item-renderer:has(.ytd-badge-supported-renderer:-abp-has-text(Auto-dubbed))
+youtube.com#?#ytd-rich-item-renderer:has(div.badge-shape-wiz__text:-abp-has-text(Auto-dubbed))
+youtube.com#?#ytd-rich-item-renderer:has(div.yt-badge-shape__text:-abp-has-text(Auto-dubbed))
 
-! Remove "Recommended" prompts when pausing a video (Autumn 2025)
-youtube.com,35.190.94.206##.ytp-pause-overlay
-youtube.com,35.190.94.206##.show-video-thumbnail-button
+youtube.com##ytd-tvfilm-offer-module-renderer
 
-!#endif
-!#endif
-!#endif
+! ============================================================
+! NOT CONVERTIBLE — no ABP equivalent exists (listed for reference only,
+! do not add these lines to an active ABP list, they are not valid ABP syntax):
+! ============================================================
+! youtube.com##ytd-rich-item-renderer:remove-attr(is-in-first-column)
+!   -> uBO DOM-mutation operator, no ABP equivalent
+! youtube.com##.ytp-time-display span.ytp-time-wrapper:remove-class(ytp-time-wrapper)
+!   -> uBO DOM-mutation operator, no ABP equivalent
+! youtube.com###cinematics.ytd-watch-flexy:remove()
+!   -> uBO DOM-removal operator, no ABP equivalent
+!   (closest approximation, not functionally identical: youtube.com#$##cinematics.ytd-watch-flexy { display: none !important; })
+! youtube.com##+js(ra, enable-color-sampling, ytd-watch-metadata[enable-color-sampling], stay)
+!   -> uBO scriptlet "ra"; ABP snippet library does not confirm an equivalent
+! youtube.com##+js(aeld, /^mouse(enter|leave)$/, , elements, #description)
+!   -> uBO scriptlet "aeld" (addEventListener defuser); ABP snippet library does not confirm an equivalent
+! youtube.com##ytd-grid-video-renderer:has(a[href^="/short looking for more? /shorts/"])
+!   -> selector appears malformed/truncated in the original source list itself
