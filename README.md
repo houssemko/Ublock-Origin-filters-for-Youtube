@@ -7,14 +7,21 @@ This filter list aims to clean up YouTube's cluttered interface. Inspired by com
 ## 🛠️ How to Use
 
 1. **Install [uBlock Origin](https://ublockorigin.com/)** (available for Chrome, Firefox, Edge, and more).
-2. Open the uBlock Origin dashboard (click the extension icon → ⚙️ *Dashboard*).
-3. Go to the **"Filter lists"** tab.
-4. Scroll down to the **"Custom"** section.
-5. Paste the raw URL of this filter list:
+   
+3. Open the uBlock Origin dashboard (click the extension icon → ⚙️ *Dashboard*).
+   
+5. Go to the **"Filter lists"** tab.
+   
+6. Scroll down to the **"Custom"** section.
+   
+8. Paste the raw URL of this filter list:
+   
    ```
+   
    https://raw.githubusercontent.com/houssemko/Ublock-Origin-filters-for-Youtube/main/Youtube-Declutter.txt
+   
    ```
-6. Click **"Apply changes"**.
+10. Click **"Apply changes"**.
 
 ## 📦 What's Included
 - Hides YouTube Shorts.
