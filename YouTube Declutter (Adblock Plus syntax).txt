@@ -2,11 +2,6 @@
 ! Title: YouTube Declutter (converted from uBO syntax to ABP syntax)
 ! Source: converted from "YouTube Declutter" (uBO list)
 ! Notes: Lines using uBO-only DOM-mutation operators (:remove(), :remove-attr(),
-!        :remove-class()) and uBO scriptlets (##+js(...)) have NO reliable ABP
-!        equivalent and are listed separately at the bottom as NOT CONVERTIBLE.
-!        Everything below this line uses plain ## (native CSS) or #?# (ABP
-!        extended CSS, using :-abp-has-text in place of uBO's :has-text) or
-!        #$# (ABP CSS injection, in place of uBO's :style()).
 
 ! ---------- HOME & GENERAL LAYOUT ----------
 youtube.com#$##frosted-glass { height: 60px !important; top: 0 !important; }
