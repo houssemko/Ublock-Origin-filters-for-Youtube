@@ -1,6 +1,6 @@
 [uBlock Origin]
 ! Title: YouTube Declutter
-! Last modified: Mon Aug  3 03:04:15 PM UTC 2026
+! Last modified: Sun Aug 16 06:24:38 AM UTC 2026
 ! Homepage: https://github.com/houssemko/Ublock-Origin-filters-for-Youtube
 ! Licence: MIT license 
 
@@ -115,8 +115,9 @@ youtube.com##ytd-watch-next-secondary-results-renderer > div[id='items'] > ytd-i
 youtube.com##.ytp-fullscreen-quick-actions, .ytp-button.ytp-play-button, .ytp-time-wrapper, .ytp-volume-area, .ytp-right-controls, .ytp-button.ytp-chapter-title, .ytp-button.ytp-fullscreen-grid-expand-button:style(backdrop-filter: blur(2px) !important; background: rgba(0, 0, 0, 0.5) !important; border-radius: 18px !important;)
 
 ! Style popup panels with translucency
-youtube.com###contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important;)
-youtube.com###header > .ytd-multi-page-menu-renderer.style-scope
+
+youtube.com##html[dark] #contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(10, 10, 10, 0.8) !important; color: #fff !important;)
+youtube.com##html:not([dark]) #contentWrapper > .ytd-popup-container.style-scope:style(background: rgba(255, 255, 255, 0.85) !important; color: #000 !important;)
 
 ! Remove the "Contains paid promotion" popup on sponsored videos.
 youtube.com##.ytp-paid-content-overlay-link
